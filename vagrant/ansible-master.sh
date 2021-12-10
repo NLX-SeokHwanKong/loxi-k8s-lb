@@ -1,0 +1,1 @@
+ansible-playbook ./ansible/master.yaml --extra-vars '{"node_ip": "192.168.20.10","node_name": "master-c2-1","node_id": "m-c2-1","cluster": "2","cloud_provider": "cloudlycke","k8s_version": "1.18.2"}'

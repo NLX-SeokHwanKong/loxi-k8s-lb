@@ -1,0 +1,58 @@
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: InitConfiguration
+bootstrapTokens:
+- groups:
+  - system:bootstrappers:kubeadm:default-node-token
+  token: abcdef.0123456789abcdef
+  ttl: 24h0m0s
+  usages:
+  - signing
+  - authentication
+localAPIEndpoint:
+  advertiseAddress: {{ node_ip }}
+  bindPort: 6443
+nodeRegistration:
+  criSocket: /var/run/containerd/containerd.sock
+  name: {{ node_name }}
+  taints:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+  kubeletExtraArgs:
+    node-ip: {{ node_ip }}
+{% if cluster == "2" %}
+    provider-id: {{ cloud_provider }}://{{ node_id }}
+    cloud-provider: external
+{% endif %}
+---
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+imageRepository: k8s.gcr.io
+kubernetesVersion: v{{ k8s_version }}
+clusterName: kubernetes-{{ cluster }}
+apiServer:
+  certSANs:
+    - {{ node_ip }}
+  extraArgs:
+    authorization-mode: Node,RBAC
+{% if cluster == "2" %}
+    cloud-provider: external
+{% endif %}
+  timeoutForControlPlane: 5m0s
+{% if cluster == "2" %}
+controllerManager:
+  extraArgs:
+    cloud-provider: external
+{% else %}
+controllerManager: {}
+{% endif %}
+scheduler: {}
+certificatesDir: /etc/kubernetes/pki
+dns:
+  type: CoreDNS
+etcd:
+  local:
+    dataDir: /var/lib/etcd
+networking:
+  dnsDomain: cluster.local
+  podSubnet: 192.168.0.0/16
+  serviceSubnet: 10.96.0.0/12

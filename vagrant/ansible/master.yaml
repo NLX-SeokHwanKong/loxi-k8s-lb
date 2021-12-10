@@ -1,0 +1,157 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install packages that allow apt to be used over HTTPS
+      apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+      vars:
+        packages:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg-agent
+          - software-properties-common
+
+    - name: Add an apt signing key for Docker
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add apt repository for stable version
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+        state: present
+
+    - name: Load needed kernel modules
+      modprobe:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - overlay
+        - br_netfilter
+
+    - name: Configure required sysctl params
+      sysctl:
+        name: "{{ item.param }}"
+        value: "{{ item.value }}"
+        state: present
+      with_items:
+        - { param: net.bridge.bridge-nf-call-iptables, value: '1' }
+        - { param: net.bridge.bridge-nf-call-ip6tables, value: '1' }
+        - { param: net.ipv4.ip_forward, value: '1' }
+
+    - name: Install containerd
+      apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+      vars:
+        packages:
+          - containerd.io
+
+    - name: Create containerd configuration directory
+      become: true
+      file:
+        path: /etc/containerd/
+        state: directory
+
+    - name: Copy containerd config to remote
+      become: true
+      copy:
+        src: configs/config.toml
+        dest: /etc/containerd/config.toml
+
+    - name: Restart containerd
+      service:
+        name: containerd
+        state: restarted
+
+    - name: Copy crictl configuration to remote
+      become: true
+      copy:
+        src: configs/crictl.yaml
+        dest: /etc/crictl.yaml
+
+    - name: Remove swapfile from /etc/fstab
+      mount:
+        name: "{{ item }}"
+        fstype: swap
+        state: absent
+      with_items:
+        - swap
+        - none
+
+    - name: Disable swap
+      command: swapoff -a
+      when: ansible_swaptotal_mb > 0
+
+    - name: Add an apt signing key for Kubernetes
+      apt_key:
+        url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+        state: present
+
+    - name: Adding apt repository for Kubernetes
+      apt_repository:
+        repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+        state: present
+        filename: kubernetes.list
+
+    - name: Install Kubernetes binaries
+      apt:
+        name: "{{ packages }}"
+        state: present
+        update_cache: yes
+      vars:
+        packages:
+          - kubelet={{ k8s_version }}-00
+          - kubeadm={{ k8s_version }}-00
+          - kubectl={{ k8s_version }}-00
+
+    - name: Create kubeadm init config
+      template:
+        src: "kubeadm-init-v1beta2.j2"
+        dest: "/etc/kubernetes/kubeadm-init.conf"
+
+    - name: Initialize the Kubernetes cluster using kubeadm
+      become: true
+      command: kubeadm init --config /etc/kubernetes/kubeadm-init.conf
+
+    - name: Setup kubeconfig for root user
+      command: "{{ item }}"
+      with_items:
+        - mkdir -p /root/.kube
+        - cp -i /etc/kubernetes/admin.conf /root/.kube/config
+        - chown root:root /root/.kube/config
+
+    - name: Restart kubelet
+      service:
+        name: kubelet
+        daemon_reload: yes
+        state: restarted
+
+    - name: Copy flannel manifest(s) to remote
+      copy:
+        src: manifests/flannel.yaml
+        dest: /etc/kubernetes/flannel.yaml
+
+    - name: Install flannel CNI plugin
+      become: false
+      command: kubectl apply -f /etc/kubernetes/flannel.yaml
+
+    - name: Copy Cloudlycke Controller Manager manifest to remote
+      copy:
+        src: manifests/cloudlycke-ccm.yaml
+        dest: /etc/kubernetes/cloudlycke-ccm.yaml
+
+    - name: Copy admin.conf (kubeconfig) from remote
+      fetch:
+        src: /etc/kubernetes/admin.conf
+        dest: artifacts/admin-{{ node_name }}.conf
+        flat: yes
+
+  handlers:
+    - name: containerd status
+      service: name=containerd state=started

@@ -1,0 +1,20 @@
+---
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: JoinConfiguration
+caCertPath: /etc/kubernetes/pki/ca.crt
+discovery:
+  bootstrapToken:
+    apiServerEndpoint: 192.168.{{ cluster }}0.10:6443
+    token: abcdef.0123456789abcdef
+    unsafeSkipCAVerification: true
+  timeout: 5m0s
+  tlsBootstrapToken: abcdef.0123456789abcdef
+nodeRegistration:
+  criSocket: /var/run/containerd/containerd.sock
+  name: {{ node_name }}
+  kubeletExtraArgs:
+    node-ip: {{ node_ip }}
+{% if cluster == "2" %}
+    provider-id: {{ cloud_provider }}://{{ node_id }}
+    cloud-provider: external
+{% endif %}
