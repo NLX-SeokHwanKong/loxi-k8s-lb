@@ -40,7 +40,7 @@ spec:
           imagePullPolicy: Always
           # for in-tree providers we use k8s.gcr.io/cloud-controller-manager
           # this can be replaced with any other image for out-of-tree providers
-          image: kongseokhwan/5gcore:loxi-lb
+          image: kongseokhwan/loxilb:latest
           command:
             - /bin/netlox-cloud-controller-manager
           args:

@@ -6,7 +6,7 @@ VERSION := "v0.1.0"
 
 PROJECTNAME := netlox-cloud-controller-manager
 
-DOCKERPROJECTNAME := 5gcore
+DOCKERPROJECTNAME := loxilb
 
 # Go related vars
 GOVER = 1.13
@@ -24,7 +24,7 @@ MAKEFLAGS += --silent
 
 # Docker vars
 DOCKER_HUB_REPOSITORY := kongseokhwan
-DEFAULT_VERSION_TAG := loxi-lb
+DEFAULT_VERSION_TAG := latest
 
 # Commands
 ## test: Run all tests recursively, be verbose and output test coverage (in percent)
