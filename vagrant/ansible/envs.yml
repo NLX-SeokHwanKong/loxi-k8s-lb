@@ -3,7 +3,7 @@ extra_vars = {
     node_name: "master-c1-1",
     node_id: "m-c1-1",
     cluster: "1",
-    cloud_provider: "cloudlycke",
+    cloud_provider: "netlox",
     k8s_version: "1.18.2"
 }
 
@@ -12,7 +12,7 @@ extra_vars = {
     node_name: "master-c2-1",
     node_id: "m-c2-1",
     cluster: "2",
-    cloud_provider: "cloudlycke",
+    cloud_provider: "netlox",
     k8s_version: "1.18.2"
 }
 
@@ -21,7 +21,7 @@ extra_vars = {
     node_name: "node-c1-1",
     node_id: "n-c1-1",
     cluster: "1",
-    cloud_provider: "cloudlycke",
+    cloud_provider: "netlox",
     k8s_version: 1.18.2"
 }
 
@@ -30,6 +30,6 @@ extra_vars = {
     node_name: "node-c2-1",
     node_id: "n-c2-1",
     cluster: "2",
-    cloud_provider: "cloudlycke",
+    cloud_provider: "netlox",
     k8s_version: 1.18.2"
 }

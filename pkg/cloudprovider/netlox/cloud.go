@@ -1,4 +1,4 @@
-package cloudlycke
+package netlox
 
 import (
 	"io"
@@ -7,11 +7,11 @@ import (
 	"k8s.io/klog"
 )
 
-const ProviderName = "cloudlycke"
+const ProviderName = "netlox"
 
-// The cloudlycke cloud provider implementation. Encapsulates a client to talk to our cloud provider
+// The netlox cloud provider implementation. Encapsulates a client to talk to our cloud provider
 // and the interfaces needed to satisfy the cloudprovider.Interface interface.
-type cloudlycke struct {
+type netlox struct {
 	providerName  string
 	instances     cloudprovider.Instances
 	zones         cloudprovider.Zones
@@ -28,56 +28,56 @@ func init() {
 // newCloud returns a cloudprovider.Interface
 func newCloud() (cloudprovider.Interface, error) {
 	// Bootstrap HTTP client here
-	cc := newCloudlyckeClient()
+	cc := newnetloxClient()
 
-	return &cloudlycke{
+	return &netlox{
 		instances:     newInstances(cc),
 		zones:         newZones(cc),
 		loadbalancers: newLoadBalancers(cc),
 	}, nil
 }
 
-// Note that all methods below makes cloudlycke satisfy the cloudprovider.Interface interface!
+// Note that all methods below makes netlox satisfy the cloudprovider.Interface interface!
 
 // Initialize starts any custom cloud controller loops needed for our cloud and
 // performs various kinds of housekeeping
-func (c *cloudlycke) Initialize(clientBuilder cloudprovider.ControllerClientBuilder, stop <-chan struct{}) {
+func (c *netlox) Initialize(clientBuilder cloudprovider.ControllerClientBuilder, stop <-chan struct{}) {
 	// Start your own controllers here
 	klog.V(5).Info("Initialize()")
 }
 
-func (c *cloudlycke) LoadBalancer() (cloudprovider.LoadBalancer, bool) {
+func (c *netlox) LoadBalancer() (cloudprovider.LoadBalancer, bool) {
 	klog.V(5).Info("LoadBalancer()")
 	return nil, true
 }
 
-func (c *cloudlycke) Instances() (cloudprovider.Instances, bool) {
+func (c *netlox) Instances() (cloudprovider.Instances, bool) {
 	klog.V(5).Info("Instances()")
 	return c.instances, true
 }
 
-func (c *cloudlycke) Zones() (cloudprovider.Zones, bool) {
+func (c *netlox) Zones() (cloudprovider.Zones, bool) {
 	klog.V(5).Info("Zones()")
 	return c.zones, true
 }
 
 // Clusters is not implemented
-func (c *cloudlycke) Clusters() (cloudprovider.Clusters, bool) {
+func (c *netlox) Clusters() (cloudprovider.Clusters, bool) {
 	return nil, false
 }
 
 // Routes is not implemented
-func (c *cloudlycke) Routes() (cloudprovider.Routes, bool) {
+func (c *netlox) Routes() (cloudprovider.Routes, bool) {
 	return nil, false
 }
 
 // ProviderName returns this cloud providers name
-func (c *cloudlycke) ProviderName() string {
+func (c *netlox) ProviderName() string {
 	klog.V(5).Infof("ProviderName() returned %s", ProviderName)
 	return ProviderName
 }
 
-func (c *cloudlycke) HasClusterID() bool {
+func (c *netlox) HasClusterID() bool {
 	klog.V(5).Info("HasClusterID()")
 	return true
 }

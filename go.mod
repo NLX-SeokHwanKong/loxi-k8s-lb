@@ -1,4 +1,4 @@
-module cloudlycke.io/cloudlycke
+module netlox.io/netlox
 
 go 1.13
 

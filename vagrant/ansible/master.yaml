@@ -141,10 +141,10 @@
       become: false
       command: kubectl apply -f /etc/kubernetes/flannel.yaml
 
-    - name: Copy Cloudlycke Controller Manager manifest to remote
+    - name: Copy netlox Controller Manager manifest to remote
       copy:
-        src: manifests/cloudlycke-ccm.yaml
-        dest: /etc/kubernetes/cloudlycke-ccm.yaml
+        src: manifests/netlox-ccm.yaml
+        dest: /etc/kubernetes/netlox-ccm.yaml
 
     - name: Copy admin.conf (kubeconfig) from remote
       fetch:

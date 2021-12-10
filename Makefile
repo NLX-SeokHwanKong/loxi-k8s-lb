@@ -4,14 +4,16 @@
 #GITCOMMIT := $(shell git rev-parse HEAD)
 VERSION := "v0.1.0"
 
-PROJECTNAME := cloudlycke-cloud-controller-manager
+PROJECTNAME := netlox-cloud-controller-manager
+
+DOCKERPROJECTNAME := 5gcore
 
 # Go related vars
 GOVER = 1.13
 GOCMD = go
 GOBASE := $(shell pwd)
 GOBIN := $(GOBASE)/bin
-LDFLAGS_LINUX := -ldflags "-s -w -X=cloudlycke.io/cloudlycke/pkg/version.Version=$(VERSION)"
+LDFLAGS_LINUX := -ldflags "-s -w -X=netlox.io/netlox/pkg/version.Version=$(VERSION)"
 
 # Environment info
 GOARCH=amd64
@@ -21,8 +23,8 @@ OS := linux
 MAKEFLAGS += --silent
 
 # Docker vars
-DOCKER_HUB_REPOSITORY := mikejoh
-DEFAULT_VERSION_TAG := latest
+DOCKER_HUB_REPOSITORY := kongseokhwan
+DEFAULT_VERSION_TAG := loxi-lb
 
 # Commands
 ## test: Run all tests recursively, be verbose and output test coverage (in percent)
@@ -54,13 +56,13 @@ build-linux-docker:
 .PHONY: docker-build
 docker-build:
 	@echo " > Building $(PROJECTNAME) Docker image"
-	@docker build . -t $(DOCKER_HUB_REPOSITORY)/$(PROJECTNAME):$(DEFAULT_VERSION_TAG)
+	@docker build . -t $(DOCKER_HUB_REPOSITORY)/$(DOCKERPROJECTNAME):$(DEFAULT_VERSION_TAG)
 
 ## Push Docker image to Docker registry
 .PHONY: docker-push
 docker-push:
 	@echo " > Pushing $(PROJECTNAME) Docker image"
-	@docker push $(DOCKER_HUB_REPOSITORY)/$(PROJECTNAME):$(DEFAULT_VERSION_TAG)
+	@docker push $(DOCKER_HUB_REPOSITORY)/$(DOCKERPROJECTNAME):$(DEFAULT_VERSION_TAG)
 
 ## Build and compile binary, build Docker image, push to Docker registry.
 .PHONY: release

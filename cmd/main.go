@@ -28,7 +28,7 @@ import (
 	"k8s.io/component-base/logs"
 	"k8s.io/kubernetes/cmd/cloud-controller-manager/app"
 
-	_ "cloudlycke.io/cloudlycke/pkg/cloudprovider/cloudlycke"
+	_ "netlox.io/netlox/pkg/cloudprovider/netlox"
 	_ "k8s.io/component-base/metrics/prometheus/clientgo"
 	_ "k8s.io/component-base/metrics/prometheus/version"
 )
