@@ -1,0 +1,233 @@
+Flag --address has been deprecated, see --bind-address instead.
+I1210 02:34:18.193939       1 flags.go:33] FLAG: --add-dir-header="false"
+I1210 02:34:18.193999       1 flags.go:33] FLAG: --address="127.0.0.1"
+I1210 02:34:18.194005       1 flags.go:33] FLAG: --allocate-node-cidrs="false"
+I1210 02:34:18.194010       1 flags.go:33] FLAG: --allow-untagged-cloud="false"
+I1210 02:34:18.194013       1 flags.go:33] FLAG: --alsologtostderr="false"
+I1210 02:34:18.194016       1 flags.go:33] FLAG: --authentication-kubeconfig=""
+I1210 02:34:18.194020       1 flags.go:33] FLAG: --authentication-skip-lookup="false"
+I1210 02:34:18.194023       1 flags.go:33] FLAG: --authentication-token-webhook-cache-ttl="10s"
+I1210 02:34:18.194027       1 flags.go:33] FLAG: --authentication-tolerate-lookup-failure="false"
+I1210 02:34:18.194030       1 flags.go:33] FLAG: --authorization-always-allow-paths="[/healthz]"
+I1210 02:34:18.194045       1 flags.go:33] FLAG: --authorization-kubeconfig=""
+I1210 02:34:18.194049       1 flags.go:33] FLAG: --authorization-webhook-cache-authorized-ttl="10s"
+I1210 02:34:18.194053       1 flags.go:33] FLAG: --authorization-webhook-cache-unauthorized-ttl="10s"
+I1210 02:34:18.194056       1 flags.go:33] FLAG: --bind-address="0.0.0.0"
+I1210 02:34:18.194060       1 flags.go:33] FLAG: --cert-dir=""
+I1210 02:34:18.194769       1 flags.go:33] FLAG: --cidr-allocator-type="RangeAllocator"
+I1210 02:34:18.195014       1 flags.go:33] FLAG: --client-ca-file=""
+I1210 02:34:18.195024       1 flags.go:33] FLAG: --cloud-config=""
+I1210 02:34:18.195029       1 flags.go:33] FLAG: --cloud-provider="cloudlycke"
+I1210 02:34:18.195033       1 flags.go:33] FLAG: --cluster-cidr=""
+I1210 02:34:18.195036       1 flags.go:33] FLAG: --cluster-name="kubernetes-2"
+I1210 02:34:18.195040       1 flags.go:33] FLAG: --concurrent-service-syncs="1"
+I1210 02:34:18.195045       1 flags.go:33] FLAG: --configure-cloud-routes="true"
+I1210 02:34:18.195049       1 flags.go:33] FLAG: --contention-profiling="false"
+I1210 02:34:18.195052       1 flags.go:33] FLAG: --controller-start-interval="0s"
+I1210 02:34:18.195056       1 flags.go:33] FLAG: --controllers="[*]"
+I1210 02:34:18.195066       1 flags.go:33] FLAG: --external-cloud-volume-plugin=""
+I1210 02:34:18.195070       1 flags.go:33] FLAG: --feature-gates=""
+I1210 02:34:18.195081       1 flags.go:33] FLAG: --help="false"
+I1210 02:34:18.195085       1 flags.go:33] FLAG: --http2-max-streams-per-connection="0"
+I1210 02:34:18.195089       1 flags.go:33] FLAG: --kube-api-burst="30"
+I1210 02:34:18.195092       1 flags.go:33] FLAG: --kube-api-content-type="application/vnd.kubernetes.protobuf"
+I1210 02:34:18.195097       1 flags.go:33] FLAG: --kube-api-qps="20"
+I1210 02:34:18.195107       1 flags.go:33] FLAG: --kubeconfig=""
+I1210 02:34:18.195111       1 flags.go:33] FLAG: --leader-elect="true"
+I1210 02:34:18.195114       1 flags.go:33] FLAG: --leader-elect-lease-duration="15s"
+I1210 02:34:18.195118       1 flags.go:33] FLAG: --leader-elect-renew-deadline="10s"
+I1210 02:34:18.195121       1 flags.go:33] FLAG: --leader-elect-resource-lock="endpointsleases"
+I1210 02:34:18.195125       1 flags.go:33] FLAG: --leader-elect-resource-name="cloud-controller-manager"
+I1210 02:34:18.195128       1 flags.go:33] FLAG: --leader-elect-resource-namespace="kube-system"
+I1210 02:34:18.195131       1 flags.go:33] FLAG: --leader-elect-retry-period="2s"
+I1210 02:34:18.195134       1 flags.go:33] FLAG: --log-backtrace-at=":0"
+I1210 02:34:18.195142       1 flags.go:33] FLAG: --log-dir=""
+I1210 02:34:18.195149       1 flags.go:33] FLAG: --log-file=""
+I1210 02:34:18.195153       1 flags.go:33] FLAG: --log-file-max-size="1800"
+I1210 02:34:18.195157       1 flags.go:33] FLAG: --log-flush-frequency="5s"
+I1210 02:34:18.195160       1 flags.go:33] FLAG: --logtostderr="true"
+I1210 02:34:18.195164       1 flags.go:33] FLAG: --master=""
+I1210 02:34:18.195167       1 flags.go:33] FLAG: --min-resync-period="12h0m0s"
+I1210 02:34:18.195795       1 flags.go:33] FLAG: --node-monitor-period="5s"
+I1210 02:34:18.195868       1 flags.go:33] FLAG: --node-status-update-frequency="5m0s"
+I1210 02:34:18.195876       1 flags.go:33] FLAG: --node-sync-period="0s"
+I1210 02:34:18.195879       1 flags.go:33] FLAG: --port="0"
+I1210 02:34:18.195883       1 flags.go:33] FLAG: --profiling="true"
+I1210 02:34:18.195887       1 flags.go:33] FLAG: --requestheader-allowed-names="[]"
+I1210 02:34:18.195899       1 flags.go:33] FLAG: --requestheader-client-ca-file=""
+I1210 02:34:18.195903       1 flags.go:33] FLAG: --requestheader-extra-headers-prefix="[x-remote-extra-]"
+I1210 02:34:18.195908       1 flags.go:33] FLAG: --requestheader-group-headers="[x-remote-group]"
+I1210 02:34:18.195914       1 flags.go:33] FLAG: --requestheader-username-headers="[x-remote-user]"
+I1210 02:34:18.195918       1 flags.go:33] FLAG: --route-reconciliation-period="10s"
+I1210 02:34:18.195921       1 flags.go:33] FLAG: --secure-port="10258"
+I1210 02:34:18.195925       1 flags.go:33] FLAG: --skip-headers="false"
+I1210 02:34:18.195929       1 flags.go:33] FLAG: --skip-log-headers="false"
+I1210 02:34:18.195933       1 flags.go:33] FLAG: --stderrthreshold="2"
+I1210 02:34:18.195936       1 flags.go:33] FLAG: --tls-cert-file=""
+I1210 02:34:18.195940       1 flags.go:33] FLAG: --tls-cipher-suites="[]"
+I1210 02:34:18.195947       1 flags.go:33] FLAG: --tls-min-version=""
+I1210 02:34:18.195950       1 flags.go:33] FLAG: --tls-private-key-file=""
+I1210 02:34:18.195953       1 flags.go:33] FLAG: --tls-sni-cert-key="[]"
+I1210 02:34:18.195958       1 flags.go:33] FLAG: --use-service-account-credentials="true"
+I1210 02:34:18.195964       1 flags.go:33] FLAG: --v="5"
+I1210 02:34:18.195969       1 flags.go:33] FLAG: --version="false"
+I1210 02:34:18.195976       1 flags.go:33] FLAG: --vmodule=""
+I1210 02:34:18.599143       1 serving.go:313] Generated self-signed cert in-memory
+W1210 02:34:19.158255       1 client_config.go:543] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+I1210 02:34:19.162336       1 controllermanager.go:120] Version: v0.0.0-master+$Format:%h$
+I1210 02:34:19.162818       1 cloud.go:81] HasClusterID()
+I1210 02:34:19.163470       1 healthz.go:124] Installing health checkers for (/healthz): "leaderElection"
+I1210 02:34:19.168686       1 configmap_cafile_content.go:202] Starting client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+I1210 02:34:19.169525       1 shared_informer.go:223] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+I1210 02:34:19.170521       1 configmap_cafile_content.go:202] Starting client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+I1210 02:34:19.171272       1 shared_informer.go:223] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+I1210 02:34:19.177618       1 reflector.go:175] Starting reflector *v1.ConfigMap (12h0m0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:19.178146       1 reflector.go:211] Listing and watching *v1.ConfigMap from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:19.181338       1 reflector.go:175] Starting reflector *v1.ConfigMap (12h0m0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:19.181899       1 reflector.go:211] Listing and watching *v1.ConfigMap from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:19.183093       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639103658" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639103658" (2021-12-10 01:34:18 +0000 UTC to 2022-12-10 01:34:18 +0000 UTC (now=2021-12-10 02:34:19.183076046 +0000 UTC))
+I1210 02:34:19.188875       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639103659" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639103659" (2021-12-10 01:34:18 +0000 UTC to 2022-12-10 01:34:18 +0000 UTC (now=2021-12-10 02:34:19.188856508 +0000 UTC))
+I1210 02:34:19.189285       1 secure_serving.go:178] Serving securely on [::]:10258
+I1210 02:34:19.189670       1 leaderelection.go:242] attempting to acquire leader lease  kube-system/cloud-controller-manager...
+I1210 02:34:19.190424       1 tlsconfig.go:240] Starting DynamicServingCertificateController
+I1210 02:34:19.206437       1 leaderelection.go:341] lock is held by cloudlycke-cloud-controller-manager-l29lc_d65a135c-e04d-40c9-9942-9bb48377aa1d and has not yet expired
+I1210 02:34:19.207314       1 leaderelection.go:247] failed to acquire lease kube-system/cloud-controller-manager
+I1210 02:34:19.213166       1 leaderelection.go:341] lock is held by cloudlycke-cloud-controller-manager-l29lc_d65a135c-e04d-40c9-9942-9bb48377aa1d and has not yet expired
+I1210 02:34:19.213864       1 leaderelection.go:247] failed to acquire lease kube-system/cloud-controller-manager
+I1210 02:34:19.272058       1 shared_informer.go:253] caches populated
+I1210 02:34:19.272574       1 shared_informer.go:230] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file 
+I1210 02:34:19.273559       1 shared_informer.go:253] caches populated
+I1210 02:34:19.273862       1 shared_informer.go:230] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::client-ca-file 
+I1210 02:34:19.274382       1 tlsconfig.go:178] loaded client CA [0/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "front-proxy-ca" [] issuer="<self>" (2021-12-09 07:05:14 +0000 UTC to 2031-12-07 07:05:14 +0000 UTC (now=2021-12-10 02:34:19.274347108 +0000 UTC))
+I1210 02:34:19.275903       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639103658" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639103658" (2021-12-10 01:34:18 +0000 UTC to 2022-12-10 01:34:18 +0000 UTC (now=2021-12-10 02:34:19.275883206 +0000 UTC))
+I1210 02:34:19.276204       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639103659" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639103659" (2021-12-10 01:34:18 +0000 UTC to 2022-12-10 01:34:18 +0000 UTC (now=2021-12-10 02:34:19.27619116 +0000 UTC))
+I1210 02:34:19.277286       1 tlsconfig.go:178] loaded client CA [0/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "kubernetes" [] issuer="<self>" (2021-12-09 07:05:13 +0000 UTC to 2031-12-07 07:05:13 +0000 UTC (now=2021-12-10 02:34:19.277268301 +0000 UTC))
+I1210 02:34:19.277501       1 tlsconfig.go:178] loaded client CA [1/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "front-proxy-ca" [] issuer="<self>" (2021-12-09 07:05:14 +0000 UTC to 2031-12-07 07:05:14 +0000 UTC (now=2021-12-10 02:34:19.277492757 +0000 UTC))
+I1210 02:34:19.277663       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639103658" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639103658" (2021-12-10 01:34:18 +0000 UTC to 2022-12-10 01:34:18 +0000 UTC (now=2021-12-10 02:34:19.277657347 +0000 UTC))
+I1210 02:34:19.278047       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639103659" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639103659" (2021-12-10 01:34:18 +0000 UTC to 2022-12-10 01:34:18 +0000 UTC (now=2021-12-10 02:34:19.278038309 +0000 UTC))
+I1210 02:34:21.704109       1 leaderelection.go:341] lock is held by cloudlycke-cloud-controller-manager-l29lc_d65a135c-e04d-40c9-9942-9bb48377aa1d and has not yet expired
+I1210 02:34:21.704567       1 leaderelection.go:247] failed to acquire lease kube-system/cloud-controller-manager
+I1210 02:34:23.727601       1 leaderelection.go:341] lock is held by cloudlycke-cloud-controller-manager-l29lc_d65a135c-e04d-40c9-9942-9bb48377aa1d and has not yet expired
+I1210 02:34:23.728388       1 leaderelection.go:247] failed to acquire lease kube-system/cloud-controller-manager
+I1210 02:34:27.536896       1 leaderelection.go:341] lock is held by cloudlycke-cloud-controller-manager-l29lc_d65a135c-e04d-40c9-9942-9bb48377aa1d and has not yet expired
+I1210 02:34:27.538271       1 leaderelection.go:247] failed to acquire lease kube-system/cloud-controller-manager
+I1210 02:34:30.546555       1 leaderelection.go:341] lock is held by cloudlycke-cloud-controller-manager-l29lc_d65a135c-e04d-40c9-9942-9bb48377aa1d and has not yet expired
+I1210 02:34:30.547035       1 leaderelection.go:247] failed to acquire lease kube-system/cloud-controller-manager
+E1210 02:34:34.839633       1 event.go:316] Could not construct reference to: '&v1.Lease{TypeMeta:v1.TypeMeta{Kind:"", APIVersion:""}, ObjectMeta:v1.ObjectMeta{Name:"cloud-controller-manager", GenerateName:"", Namespace:"kube-system", SelfLink:"/apis/coordination.k8s.io/v1/namespaces/kube-system/leases/cloud-controller-manager", UID:"38902a4a-db87-4e42-833e-cf68e3602373", ResourceVersion:"43174", Generation:0, CreationTimestamp:v1.Time{Time:time.Time{wall:0x0, ext:63774641106, loc:(*time.Location)(0x2b6ea60)}}, DeletionTimestamp:(*v1.Time)(nil), DeletionGracePeriodSeconds:(*int64)(nil), Labels:map[string]string(nil), Annotations:map[string]string(nil), OwnerReferences:[]v1.OwnerReference(nil), Finalizers:[]string(nil), ClusterName:"", ManagedFields:[]v1.ManagedFieldsEntry{v1.ManagedFieldsEntry{Manager:"cloudlycke-cloud-controller-manager", Operation:"Update", APIVersion:"coordination.k8s.io/v1", Time:(*v1.Time)(0xc0004443c0), FieldsType:"FieldsV1", FieldsV1:(*v1.FieldsV1)(0xc0004443e0)}}}, Spec:v1.LeaseSpec{HolderIdentity:(*string)(nil), LeaseDurationSeconds:(*int32)(nil), AcquireTime:(*v1.MicroTime)(nil), RenewTime:(*v1.MicroTime)(nil), LeaseTransitions:(*int32)(nil)}}' due to: 'no kind is registered for the type v1.Lease in scheme "pkg/runtime/scheme.go:101"'. Will not report event: 'Normal' 'LeaderElection' 'cloudlycke-cloud-controller-manager-l29lc_79c8d007-abe6-471f-ad55-d7af2dd5e204 became leader'
+I1210 02:34:34.847000       1 leaderelection.go:252] successfully acquired lease kube-system/cloud-controller-manager
+I1210 02:34:34.846127       1 event.go:278] Event(v1.ObjectReference{Kind:"Endpoints", Namespace:"kube-system", Name:"cloud-controller-manager", UID:"6f5cbe43-2c44-4338-b941-e6f0db9dbafa", APIVersion:"v1", ResourceVersion:"43173", FieldPath:""}): type: 'Normal' reason: 'LeaderElection' cloudlycke-cloud-controller-manager-l29lc_79c8d007-abe6-471f-ad55-d7af2dd5e204 became leader
+I1210 02:34:34.854672       1 cloud.go:46] Initialize()
+I1210 02:34:34.855438       1 controllermanager.go:237] Starting "service"
+I1210 02:34:34.860513       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.861057       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.874386       1 client_builder.go:198] Verified credential for kube-system/service-controller
+I1210 02:34:34.876813       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.877916       1 cloud.go:50] LoadBalancer()
+I1210 02:34:34.878556       1 controllermanager.go:247] Started "service"
+I1210 02:34:34.878568       1 controllermanager.go:237] Starting "route"
+I1210 02:34:34.878572       1 core.go:101] Will not configure cloud provider routes for allocate-node-cidrs: false, configure-cloud-routes: true.
+W1210 02:34:34.878576       1 controllermanager.go:244] Skipping "route"
+I1210 02:34:34.878580       1 controllermanager.go:237] Starting "cloud-node"
+I1210 02:34:34.879190       1 controller.go:208] Starting service controller
+I1210 02:34:34.879213       1 shared_informer.go:223] Waiting for caches to sync for service
+I1210 02:34:34.886999       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.888095       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.905539       1 client_builder.go:198] Verified credential for kube-system/node-controller
+I1210 02:34:34.907778       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.909457       1 node_controller.go:110] Sending events to api server.
+I1210 02:34:34.910574       1 cloud.go:55] Instances()
+I1210 02:34:34.910674       1 controllermanager.go:247] Started "cloud-node"
+I1210 02:34:34.910688       1 controllermanager.go:237] Starting "cloud-node-lifecycle"
+I1210 02:34:34.915676       1 leaderelection.go:272] successfully renewed lease kube-system/cloud-controller-manager
+I1210 02:34:34.917480       1 cloud.go:55] Instances()
+I1210 02:34:34.923811       1 instances.go:191] InstanceExistsByProviderID(cloudlycke://m-c2-1)
+I1210 02:34:34.924525       1 instances.go:73] NodeAddressesByProviderID(cloudlycke://m-c2-1)
+I1210 02:34:34.926405       1 instances.go:191] InstanceExistsByProviderID(cloudlycke://n-c2-1)
+I1210 02:34:34.926882       1 instances.go:73] NodeAddressesByProviderID(cloudlycke://n-c2-1)
+I1210 02:34:34.927426       1 cloud.go:55] Instances()
+I1210 02:34:34.926066       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.929315       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.937127       1 instances.go:191] InstanceExistsByProviderID(cloudlycke://n-c2-1)
+I1210 02:34:34.937282       1 instances.go:73] NodeAddressesByProviderID(cloudlycke://n-c2-1)
+I1210 02:34:34.937323       1 instances.go:191] InstanceExistsByProviderID(cloudlycke://m-c2-1)
+I1210 02:34:34.937336       1 instances.go:73] NodeAddressesByProviderID(cloudlycke://m-c2-1)
+I1210 02:34:34.937850       1 client_builder.go:198] Verified credential for kube-system/node-controller
+I1210 02:34:34.939407       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.941290       1 node_lifecycle_controller.go:78] Sending events to api server
+I1210 02:34:34.942679       1 cloud.go:55] Instances()
+I1210 02:34:34.943017       1 controllermanager.go:247] Started "cloud-node-lifecycle"
+I1210 02:34:34.943738       1 cloud.go:55] Instances()
+I1210 02:34:34.948126       1 reflector.go:175] Starting reflector *v1.Service (30s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.949125       1 reflector.go:211] Listing and watching *v1.Service from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.949883       1 reflector.go:175] Starting reflector *v1.Node (16h31m23.345801379s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.950177       1 reflector.go:211] Listing and watching *v1.Node from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1210 02:34:34.954010       1 node_controller.go:316] This node master-c2-1 is registered without the cloud taint. Will not process.
+I1210 02:34:34.954835       1 node_controller.go:316] This node node-c2-1 is registered without the cloud taint. Will not process.
+I1210 02:34:34.968978       1 leaderelection.go:272] successfully renewed lease kube-system/cloud-controller-manager
+I1210 02:34:34.979504       1 shared_informer.go:253] caches populated
+I1210 02:34:34.979594       1 shared_informer.go:230] Caches are synced for service 
+I1210 02:34:34.979667       1 controller.go:661] Detected change in list of current cluster nodes. New node set: map[node-c2-1:{}]
+I1210 02:34:34.979689       1 controller.go:669] Successfully updated 0 out of 0 load balancers to direct traffic to the updated set of nodes
+I1210 02:34:34.979733       1 controller.go:337] Ensuring load balancer for service default/nginx-service
+I1210 02:34:34.979781       1 controller.go:742] Finished syncing service "default/nginx-service" (56.051µs)
+E1210 02:34:34.980214       1 runtime.go:78] Observed a panic: "invalid memory address or nil pointer dereference" (runtime error: invalid memory address or nil pointer dereference)
+goroutine 234 [running]:
+k8s.io/apimachinery/pkg/util/runtime.logPanic(0x189b3e0, 0x2b4a940)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/runtime/runtime.go:74 +0xa3
+k8s.io/apimachinery/pkg/util/runtime.HandleCrash(0x0, 0x0, 0x0)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/runtime/runtime.go:48 +0x82
+panic(0x189b3e0, 0x2b4a940)
+	/usr/lib/go-1.13/src/runtime/panic.go:679 +0x1b2
+k8s.io/kubernetes/pkg/controller/service.(*Controller).ensureLoadBalancer(0xc0000fe8c0, 0xc000226d20, 0x0, 0x0, 0x6)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:389 +0x8e
+k8s.io/kubernetes/pkg/controller/service.(*Controller).syncLoadBalancerIfNeeded(0xc0000fe8c0, 0xc000226d20, 0xc0002f1000, 0x15, 0xc00020aaa0, 0xc0007d7c40, 0x14e7983)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:344 +0x87d
+k8s.io/kubernetes/pkg/controller/service.(*Controller).processServiceCreateOrUpdate(0xc0000fe8c0, 0xc000226d20, 0xc0002f1000, 0x15, 0x0, 0x0)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:280 +0xdf
+k8s.io/kubernetes/pkg/controller/service.(*Controller).syncService(0xc0000fe8c0, 0xc0002f1000, 0x15, 0x0, 0x0)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:759 +0x2f6
+k8s.io/kubernetes/pkg/controller/service.(*Controller).processNextWorkItem(0xc0000fe8c0, 0x40c100)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:238 +0x109
+k8s.io/kubernetes/pkg/controller/service.(*Controller).worker(0xc0000fe8c0)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:227 +0x2b
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1(0xc000417bc0)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:155 +0x5e
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil(0xc000417bc0, 0x1d84100, 0xc0002e9ec0, 0xc0001c0501, 0xc00066f920)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:156 +0xa3
+k8s.io/apimachinery/pkg/util/wait.JitterUntil(0xc000417bc0, 0x3b9aca00, 0x0, 0x1, 0xc00066f920)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:133 +0xe2
+k8s.io/apimachinery/pkg/util/wait.Until(0xc000417bc0, 0x3b9aca00, 0xc00066f920)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:90 +0x4d
+created by k8s.io/kubernetes/pkg/controller/service.(*Controller).Run
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:216 +0x260
+panic: runtime error: invalid memory address or nil pointer dereference [recovered]
+	panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x18 pc=0x16cd81e]
+
+goroutine 234 [running]:
+k8s.io/apimachinery/pkg/util/runtime.HandleCrash(0x0, 0x0, 0x0)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/runtime/runtime.go:55 +0x105
+panic(0x189b3e0, 0x2b4a940)
+	/usr/lib/go-1.13/src/runtime/panic.go:679 +0x1b2
+k8s.io/kubernetes/pkg/controller/service.(*Controller).ensureLoadBalancer(0xc0000fe8c0, 0xc000226d20, 0x0, 0x0, 0x6)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:389 +0x8e
+k8s.io/kubernetes/pkg/controller/service.(*Controller).syncLoadBalancerIfNeeded(0xc0000fe8c0, 0xc000226d20, 0xc0002f1000, 0x15, 0xc00020aaa0, 0xc0007d7c40, 0x14e7983)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:344 +0x87d
+k8s.io/kubernetes/pkg/controller/service.(*Controller).processServiceCreateOrUpdate(0xc0000fe8c0, 0xc000226d20, 0xc0002f1000, 0x15, 0x0, 0x0)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:280 +0xdf
+k8s.io/kubernetes/pkg/controller/service.(*Controller).syncService(0xc0000fe8c0, 0xc0002f1000, 0x15, 0x0, 0x0)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:759 +0x2f6
+k8s.io/kubernetes/pkg/controller/service.(*Controller).processNextWorkItem(0xc0000fe8c0, 0x40c100)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:238 +0x109
+k8s.io/kubernetes/pkg/controller/service.(*Controller).worker(0xc0000fe8c0)
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:227 +0x2b
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1(0xc000417bc0)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:155 +0x5e
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil(0xc000417bc0, 0x1d84100, 0xc0002e9ec0, 0xc0001c0501, 0xc00066f920)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:156 +0xa3
+k8s.io/apimachinery/pkg/util/wait.JitterUntil(0xc000417bc0, 0x3b9aca00, 0x0, 0x1, 0xc00066f920)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:133 +0xe2
+k8s.io/apimachinery/pkg/util/wait.Until(0xc000417bc0, 0x3b9aca00, 0xc00066f920)
+	/home/mikael/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:90 +0x4d
+created by k8s.io/kubernetes/pkg/controller/service.(*Controller).Run
+	/home/mikael/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:216 +0x260
