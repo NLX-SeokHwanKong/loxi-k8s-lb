@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
+	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
@@ -65,11 +66,13 @@ func newCloud() (cloudprovider.Interface, error) {
 		// This will attempt to load the configuration when running within a POD
 		cfg, err := rest.InClusterConfig()
 		if err != nil {
+			klog.Error("error creating kubernetes client config: %s", err.Error())
 			return nil, fmt.Errorf("error creating kubernetes client config: %s", err.Error())
 		}
 		cl, err = kubernetes.NewForConfig(cfg)
 
 		if err != nil {
+			klog.Error("error creating kubernetes client: %s", err.Error())
 			return nil, fmt.Errorf("error creating kubernetes client: %s", err.Error())
 		}
 		// use the current context in kubeconfig
@@ -81,6 +84,7 @@ func newCloud() (cloudprovider.Interface, error) {
 		cl, err = kubernetes.NewForConfig(config)
 
 		if err != nil {
+			klog.Error("error creating kubernetes client: %s", err.Error())
 			return nil, fmt.Errorf("error creating kubernetes client: %s", err.Error())
 		}
 	}
@@ -102,6 +106,16 @@ func newCloud() (cloudprovider.Interface, error) {
 func (c *netlox) Initialize(clientBuilder cloudprovider.ControllerClientBuilder, stop <-chan struct{}) {
 	// Start your own controllers here
 	klog.V(5).Info("Initialize()")
+
+	clientset := clientBuilder.ClientOrDie("do-shared-informers")
+	sharedInformer := informers.NewSharedInformerFactory(clientset, 0)
+
+	//res := NewResourcesController(c.resources, sharedInformer.Core().V1().Services(), clientset)
+
+	sharedInformer.Start(nil)
+	sharedInformer.WaitForCacheSync(nil)
+	//go res.Run(stop)
+	//go c.serveDebug(stop)
 }
 
 func (c *netlox) LoadBalancer() (cloudprovider.LoadBalancer, bool) {
