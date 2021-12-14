@@ -3,7 +3,7 @@ module netlox.io/netlox
 go 1.13
 
 require (
-	github.com/plunder-app/plndr-cloud-provider v0.0.0-20210419084012-9eb45d26dba4 // indirect
+	github.com/plunder-app/plndr-cloud-provider v0.0.0-20210419084012-9eb45d26dba4
 	k8s.io/api v0.18.0
 	k8s.io/apimachinery v0.18.0
 	k8s.io/client-go v0.18.0
