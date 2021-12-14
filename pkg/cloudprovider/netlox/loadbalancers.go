@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/NLX-SeokHwanKong/loxi-k8s-lb/pkg/cloudprovider/ipam"
+	"github.com/plunder-app/plndr-cloud-provider/pkg/ipam"
 
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/client-go/kubernetes"

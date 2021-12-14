@@ -21,16 +21,16 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"time"
-	"math/rand"
 
 	"k8s.io/component-base/logs"
 	"k8s.io/kubernetes/cmd/cloud-controller-manager/app"
 
-	_ "netlox.io/netlox/pkg/cloudprovider/netlox"
 	_ "k8s.io/component-base/metrics/prometheus/clientgo"
 	_ "k8s.io/component-base/metrics/prometheus/version"
+	_ "netlox.io/netlox/pkg/cloudprovider/netlox"
 )
 
 func main() {
