@@ -7,8 +7,6 @@ import (
 	"k8s.io/klog"
 )
 
-const ProviderName = "netlox"
-
 // The netlox cloud provider implementation. Encapsulates a client to talk to our cloud provider
 // and the interfaces needed to satisfy the cloudprovider.Interface interface.
 type netlox struct {
@@ -17,6 +15,20 @@ type netlox struct {
 	zones         cloudprovider.Zones
 	loadbalancers cloudprovider.LoadBalancer
 }
+
+const (
+	//ProviderName is the name of the cloud provider
+	ProviderName = "netlox"
+
+	//PlunderCloudConfig is the default name of the load balancer config Map
+	NetloxCloudConfig = "netlox"
+
+	//PlunderClientConfig is the default name of the load balancer config Map
+	NetloxClientConfig = "netlox"
+
+	//PlunderServicesKey is the key in the ConfigMap that has the services configuration
+	NetloxServicesKey = "netlox-services"
+)
 
 // Register the cloud provider
 func init() {

@@ -2,20 +2,39 @@ package netlox
 
 import (
 	"context"
-	"net/http"
+	"fmt"
+
+	"netlox.io/netlox/pkg/cloudprovider/ipam"
 
 	v1 "k8s.io/api/core/v1"
+	"k8s.io/client-go/kubernetes"
 	cloudprovider "k8s.io/cloud-provider"
 	"k8s.io/klog"
 )
 
-type loadbalancers struct {
-	client *http.Client
+type loxiServices struct {
+	Services []services `json:"services"`
 }
 
-func newLoadBalancers(c *http.Client) cloudprovider.LoadBalancer {
+type services struct {
+	Vip         string `json:"vip"`
+	Port        int    `json:"port"`
+	Type        string `json:"type"`
+	UID         string `json:"uid"`
+	ServiceName string `json:"serviceName"`
+}
+
+type loadbalancers struct {
+	kubeClient     *kubernetes.Clientset
+	nameSpace      string
+	cloudConfigMap string
+}
+
+func newLoadBalancers(kubeClient *kubernetes.Clientset, ns, cm, serviceCidr string) cloudprovider.LoadBalancer {
 	return &loadbalancers{
-		c,
+		kubeClient:     kubeClient,
+		nameSpace:      ns,
+		cloudConfigMap: cm,
 	}
 }
 
@@ -23,6 +42,23 @@ func newLoadBalancers(c *http.Client) cloudprovider.LoadBalancer {
 // Parameter 'clusterName' is the name of the cluster as presented to kube-controller-manager
 func (lb *loadbalancers) GetLoadBalancer(ctx context.Context, clusterName string, service *v1.Service) (status *v1.LoadBalancerStatus, exists bool, err error) {
 	klog.V(5).Info("GetLoadBalancer()")
+	// Retrieve the kube-vip configuration from it's namespace
+	cm, err := lb.GetConfigMap(NetloxClientConfig, service.Namespace)
+	if err != nil {
+		return nil, true, nil
+	}
+
+	// Find the services configuration in the configMap
+	svc, err := lb.GetServices(cm)
+	if err != nil {
+		return nil, false, err
+	}
+
+	for x := range svc.Services {
+		if svc.Services[x].UID == string(service.UID) {
+			return &service.Status.LoadBalancer, true, nil
+		}
+	}
 	return nil, false, nil
 }
 
@@ -30,7 +66,7 @@ func (lb *loadbalancers) GetLoadBalancer(ctx context.Context, clusterName string
 // *v1.Service parameter as read-only and not modify it.
 func (lb *loadbalancers) GetLoadBalancerName(ctx context.Context, clusterName string, service *v1.Service) string {
 	klog.V(5).Info("GetLoadBalancerName()")
-	return ""
+	return cloudprovider.DefaultLoadBalancerName(service)
 }
 
 // EnsureLoadBalancer creates a new load balancer 'name', or updates the existing one. Returns the status of the balancer
@@ -39,16 +75,17 @@ func (lb *loadbalancers) GetLoadBalancerName(ctx context.Context, clusterName st
 // Parameter 'clusterName' is the name of the cluster as presented to kube-controller-manager
 func (lb *loadbalancers) EnsureLoadBalancer(ctx context.Context, clusterName string, service *v1.Service, nodes []*v1.Node) (*v1.LoadBalancerStatus, error) {
 	klog.V(5).Info("EnsureLoadBalancer()")
-	return nil, nil
+	return lb.syncLoadBalancer(service)
 }
 
 // UpdateLoadBalancer updates hosts under the specified load balancer.
 // Implementations must treat the *v1.Service and *v1.Node
 // parameters as read-only and not modify them.
 // Parameter 'clusterName' is the name of the cluster as presented to kube-controller-manager
-func (lb *loadbalancers) UpdateLoadBalancer(ctx context.Context, clusterName string, service *v1.Service, nodes []*v1.Node) error {
+func (lb *loadbalancers) UpdateLoadBalancer(ctx context.Context, clusterName string, service *v1.Service, nodes []*v1.Node) (err error) {
 	klog.V(5).Info("UpdateLoadBalancer()")
-	return nil
+	_, err = lb.syncLoadBalancer(service)
+	return err
 }
 
 // EnsureLoadBalancerDeleted deletes the specified load balancer if it
@@ -61,7 +98,170 @@ func (lb *loadbalancers) UpdateLoadBalancer(ctx context.Context, clusterName str
 // Parameter 'clusterName' is the name of the cluster as presented to kube-controller-manager
 func (lb *loadbalancers) EnsureLoadBalancerDeleted(ctx context.Context, clusterName string, service *v1.Service) error {
 	klog.V(5).Info("EnsureLoadBalancerDeleted()")
-	return nil
+	return lb.deleteLoadBalancer(service)
+}
+
+func (lb *loadbalancers) deleteLoadBalancer(service *v1.Service) error {
+	klog.Infof("deleting service '%s' (%s)", service.Name, service.UID)
+
+	// Get the kube-vip (client) configuration from it's namespace
+	cm, err := lb.GetConfigMap(NetloxClientConfig, service.Namespace)
+	if err != nil {
+		klog.Errorf("The configMap [%s] doensn't exist", NetloxClientConfig)
+		return nil
+	}
+	// Find the services configuraiton in the configMap
+	svc, err := lb.GetServices(cm)
+	if err != nil {
+		klog.Errorf("The service [%s] in configMap [%s] doensn't exist", service.Name, NetloxClientConfig)
+		return nil
+	}
+
+	// Update the services configuration, by removing the  service
+	updatedSvc := svc.delServiceFromUID(string(service.UID))
+	if len(service.Status.LoadBalancer.Ingress) != 0 {
+		err = ipam.ReleaseAddress(service.Namespace, service.Spec.LoadBalancerIP)
+		if err != nil {
+			klog.Errorln(err)
+		}
+	}
+	// Update the configMap
+	_, err = lb.UpdateConfigMap(cm, updatedSvc)
+	return err
+}
+
+func (lb *loadbalancers) syncLoadBalancer(service *v1.Service) (*v1.LoadBalancerStatus, error) {
+
+	// CREATE / UPDATE LOAD BALANCER LOGIC (and return updated load balancer IP)
+
+	// Get the clound controller configuration map
+	controllerCM, err := lb.GetConfigMap(NetloxCloudConfig, "kube-system")
+	if err != nil {
+		klog.Errorf("Unable to retrieve kube-vip ipam config from configMap [%s] in kube-system", NetloxClientConfig)
+		// TODO - determine best course of action, create one if it doesn't exist
+		controllerCM, err = lb.CreateConfigMap(NetloxCloudConfig, "kube-system")
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	// Retrieve the kube-vip configuration map
+	namespaceCM, err := lb.GetConfigMap(NetloxClientConfig, service.Namespace)
+	if err != nil {
+		klog.Errorf("Unable to retrieve kube-vip service cache from configMap [%s] in [%s]", NetloxClientConfig, service.Namespace)
+		// TODO - determine best course of action
+		namespaceCM, err = lb.CreateConfigMap(NetloxClientConfig, service.Namespace)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	// This function reconciles the load balancer state
+	klog.Infof("syncing service '%s' (%s)", service.Name, service.UID)
+
+	// Find the services configuraiton in the configMap
+	svc, err := lb.GetServices(namespaceCM)
+	if err != nil {
+		klog.Errorf("Unable to retrieve services from configMap [%s], [%s]", NetloxClientConfig, err.Error())
+
+		// TODO best course of action, currently we create a new services config
+		svc = &loxiServices{}
+	}
+
+	// Check for existing configuration
+
+	existing := svc.findService(string(service.UID))
+	if existing != nil {
+		klog.Infof("found existing service '%s' (%s) with vip %s", service.Name, service.UID, existing.Vip)
+		return &service.Status.LoadBalancer, nil
+	}
+
+	if service.Spec.LoadBalancerIP == "" {
+		service.Spec.LoadBalancerIP, err = discoverAddress(controllerCM, service.Namespace, lb.cloudConfigMap)
+		if err != nil {
+			return nil, err
+		}
+	}
+
+	// TODO - manage more than one set of ports
+	newSvc := services{
+		ServiceName: service.Name,
+		UID:         string(service.UID),
+		Type:        string(service.Spec.Ports[0].Protocol),
+		Vip:         service.Spec.LoadBalancerIP,
+		Port:        int(service.Spec.Ports[0].Port),
+	}
+
+	klog.Infof("Updating service [%s], with load balancer address [%s]", service.Name, service.Spec.LoadBalancerIP)
+
+	// FIXME: Need to modify go.mod
+	_, err = lb.kubeClient.CoreV1().Services(service.Namespace).Update(service)
+	if err != nil {
+		// release the address internally as we failed to update service
+		ipamerr := ipam.ReleaseAddress(service.Namespace, service.Spec.LoadBalancerIP)
+		if ipamerr != nil {
+			klog.Errorln(ipamerr)
+		}
+		return nil, fmt.Errorf("Error updating Service Spec [%s] : %v", service.Name, err)
+	}
+
+	svc.addService(newSvc)
+
+	namespaceCM, err = lb.UpdateConfigMap(namespaceCM, svc)
+	if err != nil {
+		return nil, err
+	}
+	return &service.Status.LoadBalancer, nil
+}
+
+func discoverAddress(cm *v1.ConfigMap, namespace, configMapName string) (vip string, err error) {
+	var cidr, ipRange string
+	var ok bool
+
+	// Find Cidr
+	cidrKey := fmt.Sprintf("cidr-%s", namespace)
+	// Lookup current namespace
+	if cidr, ok = cm.Data[cidrKey]; !ok {
+		klog.Info(fmt.Errorf("No cidr config for namespace [%s] exists in key [%s] configmap [%s]", namespace, cidrKey, configMapName))
+		// Lookup global cidr configmap data
+		if cidr, ok = cm.Data["cidr-global"]; !ok {
+			klog.Info(fmt.Errorf("No global cidr config exists [cidr-global]"))
+		} else {
+			klog.Infof("Taking address from [cidr-global] pool")
+		}
+	} else {
+		klog.Infof("Taking address from [%s] pool", cidrKey)
+	}
+	if ok {
+		vip, err = ipam.FindAvailableHostFromCidr(namespace, cidr)
+		if err != nil {
+			return "", err
+		}
+		return
+	}
+
+	// Find Range
+	rangeKey := fmt.Sprintf("range-%s", namespace)
+	// Lookup current namespace
+	if ipRange, ok = cm.Data[rangeKey]; !ok {
+		klog.Info(fmt.Errorf("No range config for namespace [%s] exists in key [%s] configmap [%s]", namespace, rangeKey, configMapName))
+		// Lookup global range configmap data
+		if ipRange, ok = cm.Data["range-global"]; !ok {
+			klog.Info(fmt.Errorf("No global range config exists [range-global]"))
+		} else {
+			klog.Infof("Taking address from [range-global] pool")
+		}
+	} else {
+		klog.Infof("Taking address from [%s] pool", rangeKey)
+	}
+	if ok {
+		vip, err = ipam.FindAvailableHostFromRange(namespace, ipRange)
+		if err != nil {
+			return vip, err
+		}
+		return
+	}
+	return "", fmt.Errorf("No IP address ranges could be found either range-global or range-<namespace>")
 }
 
 //////////////////////////////////////////// sample lb with explanation of lifecycle ///////////////////////////////////////////////
