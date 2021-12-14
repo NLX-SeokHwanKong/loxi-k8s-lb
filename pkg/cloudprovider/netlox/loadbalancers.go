@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"netlox.io/netlox/pkg/cloudprovider/ipam"
+	"github.com/NLX-SeokHwanKong/loxi-k8s-lb/pkg/cloudprovider/ipam"
 
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/client-go/kubernetes"

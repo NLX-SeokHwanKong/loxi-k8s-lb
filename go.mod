@@ -1,4 +1,4 @@
-module netlox.io/netlox
+module github.com/NLX-SeokHwanKong/loxi-k8s-lb
 
 go 1.13
 
