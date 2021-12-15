@@ -72,7 +72,7 @@ func (lb *loadbalancers) CreateConfigMap(ctx context.Context, cm, nm string) (*v
 		},
 	}
 	// Return results of configMap create
-	return lb.kubeClient.CoreV1().ConfigMaps(nm).Create(ctx, &newConfigMap, metav1.GetOptions{})
+	return lb.kubeClient.CoreV1().ConfigMaps(nm).Create(ctx, &newConfigMap, metav1.CreateOptions{})
 }
 
 func (lb *loadbalancers) UpdateConfigMap(ctx context.Context, cm *v1.ConfigMap, s *loxiServices) (*v1.ConfigMap, error) {
@@ -92,5 +92,5 @@ func (lb *loadbalancers) UpdateConfigMap(ctx context.Context, cm *v1.ConfigMap, 
 	cm.Data[NetloxServicesKey] = string(b)
 
 	// Return results of configMap create
-	return lb.kubeClient.CoreV1().ConfigMaps(cm.Namespace).Update(ctx, cm, metav1.GetOptions{})
+	return lb.kubeClient.CoreV1().ConfigMaps(cm.Namespace).Update(ctx, cm, metav1.UpdateOptions{})
 }

@@ -7,6 +7,7 @@ import (
 	"github.com/plunder-app/plndr-cloud-provider/pkg/ipam"
 
 	v1 "k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	cloudprovider "k8s.io/cloud-provider"
 	"k8s.io/klog"
@@ -98,10 +99,10 @@ func (lb *loadbalancers) UpdateLoadBalancer(ctx context.Context, clusterName str
 // Parameter 'clusterName' is the name of the cluster as presented to kube-controller-manager
 func (lb *loadbalancers) EnsureLoadBalancerDeleted(ctx context.Context, clusterName string, service *v1.Service) error {
 	klog.V(5).Info("EnsureLoadBalancerDeleted()")
-	return lb.deleteLoadBalancer(service)
+	return lb.deleteLoadBalancer(ctx, service)
 }
 
-func (lb *loadbalancers) deleteLoadBalancer(service *v1.Service) error {
+func (lb *loadbalancers) deleteLoadBalancer(ctx context.Context, service *v1.Service) error {
 	klog.Infof("deleting service '%s' (%s)", service.Name, service.UID)
 
 	// Get the kube-vip (client) configuration from it's namespace
@@ -195,7 +196,7 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 	klog.Infof("Updating service [%s], with load balancer address [%s]", service.Name, service.Spec.LoadBalancerIP)
 
 	// FIXME: Need to modify go.mod
-	_, err = lb.kubeClient.CoreV1().Services(service.Namespace).Update(ctx, service)
+	_, err = lb.kubeClient.CoreV1().Services(service.Namespace).Update(ctx, service, metav1.UpdateOptions{})
 	if err != nil {
 		// release the address internally as we failed to update service
 		ipamerr := ipam.ReleaseAddress(service.Namespace, service.Spec.LoadBalancerIP)
