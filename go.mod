@@ -15,9 +15,9 @@ require (
 
 replace (
 	k8s.io/api => k8s.io/api v0.18.0
-	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.0.0-20191016113550-5357c4baaf65
+	k8s.io/apiextensions-apiserver => k8s.io/apiextensions-apiserver v0.18.0
 	k8s.io/apimachinery => k8s.io/apimachinery v0.18.1-beta.0
-	k8s.io/apiserver => k8s.io/apiserver v0.0.0-20191016112112-5190913f932d
+	k8s.io/apiserver => k8s.io/apiserver v0.18.0
 	k8s.io/cli-runtime => k8s.io/cli-runtime v0.18.0
 )
 
@@ -51,7 +51,7 @@ replace k8s.io/legacy-cloud-providers => k8s.io/legacy-cloud-providers v0.18.0
 
 replace k8s.io/metrics => k8s.io/metrics v0.18.0
 
-replace k8s.io/sample-apiserver => k8s.io/sample-apiserver v0.0.0-20191016112829-06bb3c9d77c9
+replace k8s.io/sample-apiserver => k8s.io/sample-apiserver v0.18.0
 
 replace k8s.io/sample-cli-plugin => k8s.io/sample-cli-plugin v0.18.0
 
