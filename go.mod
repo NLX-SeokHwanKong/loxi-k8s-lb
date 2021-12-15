@@ -6,6 +6,7 @@ require (
 	github.com/plunder-app/plndr-cloud-provider v0.0.0-20210419084012-9eb45d26dba4
 	k8s.io/api v0.18.0
 	k8s.io/apimachinery v0.18.0
+	k8s.io/client-go v0.18.0
 	k8s.io/cloud-provider v0.23.0
 	k8s.io/component-base v0.18.0
 	k8s.io/klog v1.0.0

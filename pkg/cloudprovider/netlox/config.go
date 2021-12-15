@@ -1,6 +1,7 @@
 package netlox
 
 import (
+	"context"
 	"encoding/json"
 
 	v1 "k8s.io/api/core/v1"
@@ -56,12 +57,13 @@ func (lb *loadbalancers) GetServices(cm *v1.ConfigMap) (svcs *loxiServices, err 
 	return
 }
 
-func (lb *loadbalancers) GetConfigMap(cm, nm string) (*v1.ConfigMap, error) {
+func (lb *loadbalancers) GetConfigMap(ctx context.Context, cm, nm string) (*v1.ConfigMap, error) {
 	// Attempt to retrieve the config map
-	return lb.kubeClient.CoreV1().ConfigMaps(nm).Get(lb.cloudConfigMap, metav1.GetOptions{})
+	return lb.kubeClient.CoreV1().ConfigMaps(nm).Get(ctx, lb.cloudConfigMap, metav1.GetOptions{})
 }
 
-func (lb *loadbalancers) CreateConfigMap(cm, nm string) (*v1.ConfigMap, error) {
+func (lb *loadbalancers) CreateConfigMap(ctx context.Context, cm, nm string) (*v1.ConfigMap, error) {
+
 	// Create new configuration map in the correct namespace
 	newConfigMap := v1.ConfigMap{
 		ObjectMeta: metav1.ObjectMeta{
@@ -70,10 +72,10 @@ func (lb *loadbalancers) CreateConfigMap(cm, nm string) (*v1.ConfigMap, error) {
 		},
 	}
 	// Return results of configMap create
-	return lb.kubeClient.CoreV1().ConfigMaps(nm).Create(&newConfigMap)
+	return lb.kubeClient.CoreV1().ConfigMaps(nm).Create(ctx, &newConfigMap, metav1.GetOptions{})
 }
 
-func (lb *loadbalancers) UpdateConfigMap(cm *v1.ConfigMap, s *loxiServices) (*v1.ConfigMap, error) {
+func (lb *loadbalancers) UpdateConfigMap(ctx context.Context, cm *v1.ConfigMap, s *loxiServices) (*v1.ConfigMap, error) {
 	// Create new configuration map in the correct namespace
 
 	// If the cm.Data / cm.Annotations haven't been initialised
@@ -90,5 +92,5 @@ func (lb *loadbalancers) UpdateConfigMap(cm *v1.ConfigMap, s *loxiServices) (*v1
 	cm.Data[NetloxServicesKey] = string(b)
 
 	// Return results of configMap create
-	return lb.kubeClient.CoreV1().ConfigMaps(cm.Namespace).Update(cm)
+	return lb.kubeClient.CoreV1().ConfigMaps(cm.Namespace).Update(ctx, cm, metav1.GetOptions{})
 }
