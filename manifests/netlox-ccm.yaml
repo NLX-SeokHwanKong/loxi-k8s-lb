@@ -46,9 +46,10 @@ spec:
           args:
             - --v=5
             - --cloud-provider=netlox
-            - --cluster-name=kubernetes-2
+            # - --cluster-name=kubernetes-2
             - --use-service-account-credentials
             - --address=127.0.0.1
+            - --leader-elect-resource-name=netlox-cloud-controller-manager
             # these flags will vary for every cloud provider
             #- --cloud-config=""
             #- --leader-elect=true

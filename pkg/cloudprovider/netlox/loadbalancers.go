@@ -43,7 +43,8 @@ func newLoadBalancers(kubeClient *kubernetes.Clientset, ns, cm, serviceCidr stri
 // Parameter 'clusterName' is the name of the cluster as presented to kube-controller-manager
 func (lb *loadbalancers) GetLoadBalancer(ctx context.Context, clusterName string, service *v1.Service) (status *v1.LoadBalancerStatus, exists bool, err error) {
 	klog.V(5).Info("GetLoadBalancer()")
-	// Retrieve the kube-vip configuration from it's namespace
+
+	// Retrieve the netlox configuration from it's namespace
 	cm, err := lb.GetConfigMap(ctx, NetloxClientConfig, service.Namespace)
 	if err != nil {
 		return nil, true, nil
@@ -105,7 +106,7 @@ func (lb *loadbalancers) EnsureLoadBalancerDeleted(ctx context.Context, clusterN
 func (lb *loadbalancers) deleteLoadBalancer(ctx context.Context, service *v1.Service) error {
 	klog.Infof("deleting service '%s' (%s)", service.Name, service.UID)
 
-	// Get the kube-vip (client) configuration from it's namespace
+	// Get the netlox (client) configuration from it's namespace
 	cm, err := lb.GetConfigMap(ctx, NetloxClientConfig, service.Namespace)
 	if err != nil {
 		klog.Errorf("The configMap [%s] doensn't exist", NetloxClientConfig)
@@ -138,7 +139,7 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 	// Get the clound controller configuration map
 	controllerCM, err := lb.GetConfigMap(ctx, NetloxCloudConfig, "kube-system")
 	if err != nil {
-		klog.Errorf("Unable to retrieve kube-vip ipam config from configMap [%s] in kube-system", NetloxClientConfig)
+		klog.Errorf("Unable to retrieve netlox ipam config from configMap [%s] in kube-system", NetloxClientConfig)
 		// TODO - determine best course of action, create one if it doesn't exist
 		controllerCM, err = lb.CreateConfigMap(ctx, NetloxCloudConfig, "kube-system")
 		if err != nil {
@@ -146,10 +147,10 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 		}
 	}
 
-	// Retrieve the kube-vip configuration map
+	// Retrieve the netlox configuration map
 	namespaceCM, err := lb.GetConfigMap(ctx, NetloxClientConfig, service.Namespace)
 	if err != nil {
-		klog.Errorf("Unable to retrieve kube-vip service cache from configMap [%s] in [%s]", NetloxClientConfig, service.Namespace)
+		klog.Errorf("Unable to retrieve netlox service cache from configMap [%s] in [%s]", NetloxClientConfig, service.Namespace)
 		// TODO - determine best course of action
 		namespaceCM, err = lb.CreateConfigMap(ctx, NetloxClientConfig, service.Namespace)
 		if err != nil {
