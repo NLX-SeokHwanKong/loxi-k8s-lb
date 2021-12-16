@@ -29,15 +29,15 @@ func (i *instances) NodeAddresses(ctx context.Context, name types.NodeName) ([]v
 	if string(name) == "master-c2-1" {
 		nodeAddr := v1.NodeAddress{
 			Type:    v1.NodeInternalIP,
-			Address: "192.168.20.10",
+			Address: "192.168.10.101",
 		}
 		nodeExternalAddr := v1.NodeAddress{
 			Type:    v1.NodeExternalIP,
-			Address: "192.168.20.10",
+			Address: "192.168.10.101",
 		}
 		nodeHostName := v1.NodeAddress{
 			Type:    v1.NodeHostName,
-			Address: "master-c2-1",
+			Address: "node1",
 		}
 		addrs = append(addrs, nodeAddr)
 		addrs = append(addrs, nodeExternalAddr)
@@ -45,15 +45,15 @@ func (i *instances) NodeAddresses(ctx context.Context, name types.NodeName) ([]v
 	} else if string(name) == "node-c2-1" {
 		nodeAddr := v1.NodeAddress{
 			Type:    v1.NodeInternalIP,
-			Address: "192.168.20.11",
+			Address: "192.168.10.102",
 		}
 		nodeExternalAddr := v1.NodeAddress{
 			Type:    v1.NodeExternalIP,
-			Address: "192.168.20.11",
+			Address: "192.168.10.102",
 		}
 		nodeHostName := v1.NodeAddress{
 			Type:    v1.NodeHostName,
-			Address: "node-c2-1",
+			Address: "node2",
 		}
 
 		addrs = append(addrs, nodeAddr)
@@ -76,18 +76,19 @@ func (i *instances) NodeAddressesByProviderID(ctx context.Context, providerID st
 
 	var addrs []v1.NodeAddress
 
+	// FIXME: Return static IP accoring to HOST IP
 	if providerID == "netlox://m-c2-1" {
 		nodeAddr := v1.NodeAddress{
 			Type:    v1.NodeInternalIP,
-			Address: "192.168.20.10",
+			Address: "192.168.10.101",
 		}
 		nodeExternalAddr := v1.NodeAddress{
 			Type:    v1.NodeExternalIP,
-			Address: "192.168.20.10",
+			Address: "192.168.10.101",
 		}
 		nodeHostName := v1.NodeAddress{
 			Type:    v1.NodeHostName,
-			Address: "master-c2-1",
+			Address: "node1",
 		}
 
 		addrs = append(addrs, nodeAddr)
@@ -96,15 +97,15 @@ func (i *instances) NodeAddressesByProviderID(ctx context.Context, providerID st
 	} else if providerID == "netlox://n-c2-1" {
 		nodeAddr := v1.NodeAddress{
 			Type:    v1.NodeInternalIP,
-			Address: "192.168.20.11",
+			Address: "192.168.10.102",
 		}
 		nodeExternalAddr := v1.NodeAddress{
 			Type:    v1.NodeExternalIP,
-			Address: "192.168.20.11",
+			Address: "192.168.10.102",
 		}
 		nodeHostName := v1.NodeAddress{
 			Type:    v1.NodeHostName,
-			Address: "node-c2-1",
+			Address: "node2",
 		}
 		addrs = append(addrs, nodeAddr)
 		addrs = append(addrs, nodeExternalAddr)
@@ -176,9 +177,9 @@ func (i *instances) CurrentNodeName(ctx context.Context, hostname string) (types
 	var nodeName types.NodeName
 
 	if hostname == "master-c2-1" {
-		nodeName = "master-c2-1"
+		nodeName = "node1"
 	} else if hostname == "node-c2-1" {
-		nodeName = "node-c2-1"
+		nodeName = "node2"
 	}
 
 	return nodeName, nil
