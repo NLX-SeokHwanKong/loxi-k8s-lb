@@ -77,7 +77,7 @@ func (lb *loadbalancers) GetLoadBalancerName(ctx context.Context, clusterName st
 // Parameter 'clusterName' is the name of the cluster as presented to kube-controller-manager
 func (lb *loadbalancers) EnsureLoadBalancer(ctx context.Context, clusterName string, service *v1.Service, nodes []*v1.Node) (*v1.LoadBalancerStatus, error) {
 	klog.V(5).Info("EnsureLoadBalancer()")
-	return lb.syncLoadBalancer(ctx, service)
+	return lb.syncLoadBalancer(ctx, service, nodes)
 }
 
 // UpdateLoadBalancer updates hosts under the specified load balancer.
@@ -86,7 +86,7 @@ func (lb *loadbalancers) EnsureLoadBalancer(ctx context.Context, clusterName str
 // Parameter 'clusterName' is the name of the cluster as presented to kube-controller-manager
 func (lb *loadbalancers) UpdateLoadBalancer(ctx context.Context, clusterName string, service *v1.Service, nodes []*v1.Node) (err error) {
 	klog.V(5).Info("UpdateLoadBalancer()")
-	_, err = lb.syncLoadBalancer(ctx, service)
+	_, err = lb.syncLoadBalancer(ctx, service, nodes)
 	return err
 }
 
@@ -132,7 +132,7 @@ func (lb *loadbalancers) deleteLoadBalancer(ctx context.Context, service *v1.Ser
 	return err
 }
 
-func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Service) (*v1.LoadBalancerStatus, error) {
+func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Service, nodes []*v1.Node) (*v1.LoadBalancerStatus, error) {
 
 	// CREATE / UPDATE LOAD BALANCER LOGIC (and return updated load balancer IP)
 
@@ -207,7 +207,9 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 		return nil, fmt.Errorf("Error updating Service Spec [%s] : %v", service.Name, err)
 	}
 
-	svc.addService(newSvc)
+	nodePort := service.Spec.Ports[0].NodePort
+
+	svc.addService(newSvc, nodes, nodePort)
 
 	namespaceCM, err = lb.UpdateConfigMap(ctx, namespaceCM, svc)
 	if err != nil {

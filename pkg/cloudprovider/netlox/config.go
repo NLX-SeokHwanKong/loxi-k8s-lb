@@ -10,8 +10,26 @@ import (
 
 // Services functions - once the service data is taken from teh configMap, these functions will interact with the data
 
-func (s *loxiServices) addService(newSvc services) {
+func (s *loxiServices) addService(newSvc services, nodes []*v1.Node, nodePort int32) {
 	s.Services = append(s.Services, newSvc)
+
+	// TODO: Add Call of LOXI-LB API for whole worker nodes which is labeled with LB SDK to configurea Load Balancing
+	/*
+		vip := newSvc.Vip
+		port := newSvc.Port
+		rips := []
+		for node_a in nodes {
+			rips = []
+			for node_b in range nodes {
+				if (node_a !== node_b)
+				_addr := node_b.Status.Addresses[0].Address
+				_port := nodePort
+				rips.append({_addr, port}, rips)
+			}
+			loxiLBCreate(node_a, vip, port, rips)
+		}
+
+	*/
 }
 
 func (s *loxiServices) findService(UID string) *services {
@@ -31,6 +49,15 @@ func (s *loxiServices) delServiceFromUID(UID string) *loxiServices {
 		if s.Services[x].UID != UID {
 			updatedServices.Services = append(updatedServices.Services, s.Services[x])
 		}
+		// TODO : Add Call of LOXI-LB API to delete Load Balancing
+		// FIXME : deleteService Case, can't get node list....
+		/*
+			vip := newSvc.Vip
+			port := newSvc.Port
+			for node_a in nodes {
+				loxiLBDelete(node_a, vip, port)
+			}
+		*/
 	}
 	// Return the updated service list (without the mentioned service)
 	return updatedServices
