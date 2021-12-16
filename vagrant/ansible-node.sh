@@ -1,1 +1,1 @@
-ansible-playbook ./ansible/node.yaml --extra-vars '{"node_ip": "192.168.10.102","node_name": "node-c2-1","node_id": "n-c2-1","cluster": "2","cloud_provider": "netlox","k8s_version": "1.18.2"}'
+ansible-playbook ./ansible/node.yaml --extra-vars '{"node_ip": "192.168.10.102","node_name": "node2","node_id": "n-c2-1","cluster": "2","cloud_provider": "netlox","k8s_version": "1.18.2"}'
