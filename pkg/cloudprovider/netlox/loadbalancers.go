@@ -196,7 +196,7 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 
 	klog.Infof("Updating service [%s], with load balancer address [%s]", service.Name, service.Spec.LoadBalancerIP)
 
-	// FIXME: Need to modify go.mod
+	// FIXME: Error Point Service Update Error
 	_, err = lb.kubeClient.CoreV1().Services(service.Namespace).Update(ctx, service, metav1.UpdateOptions{})
 	if err != nil {
 		// release the address internally as we failed to update service
@@ -204,6 +204,7 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 		if ipamerr != nil {
 			klog.Errorln(ipamerr)
 		}
+		klog.V(5).Info("Error syncLoadBalancer() : %+v", service.Status.LoadBalancer)
 		return nil, fmt.Errorf("Error updating Service Spec [%s] : %v", service.Name, err)
 	}
 
@@ -215,6 +216,8 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 	if err != nil {
 		return nil, err
 	}
+
+	klog.V(5).Info("Complete syncLoadBalancer() : %+v", service.Status.LoadBalancer)
 	return &service.Status.LoadBalancer, nil
 }
 
