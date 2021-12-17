@@ -14,17 +14,20 @@ func (s *loxiServices) addService(newSvc services, nodes []*v1.Node, nodePort in
 	s.Services = append(s.Services, newSvc)
 
 	// TODO: Add Call of LOXI-LB API for whole worker nodes which is labeled with LB SDK to configurea Load Balancing
+	// LB supported Nodes are marked with LABEL:" netlox.io/app:loadbalancer"
+	// We can extract label with : nodes[0].ObjectMeta.Labels
 	/*
 		vip := newSvc.Vip
 		port := newSvc.Port
 		rips := []
+		nodePort := newSvc.NodePort
 		for node_a in nodes {
 			rips = []
 			for node_b in range nodes {
 				if (node_a !== node_b)
 				_addr := node_b.Status.Addresses[0].Address
 				_port := nodePort
-				rips.append({_addr, port}, rips)
+				rips.append({_addr, _port}, rips)
 			}
 			loxiLBCreate(node_a, vip, port, rips)
 		}

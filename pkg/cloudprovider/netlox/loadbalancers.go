@@ -23,6 +23,7 @@ type services struct {
 	Type        string `json:"type"`
 	UID         string `json:"uid"`
 	ServiceName string `json:"serviceName"`
+	NodePort    int    `json:"nodePort"`
 }
 
 type loadbalancers struct {
@@ -192,6 +193,7 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 		Type:        string(service.Spec.Ports[0].Protocol),
 		Vip:         service.Spec.LoadBalancerIP,
 		Port:        int(service.Spec.Ports[0].Port),
+		NodePort:    int(service.Spec.Ports[0].NodePort),
 	}
 
 	klog.Infof("Updating service [%s], with load balancer address [%s]", service.Name, service.Spec.LoadBalancerIP)
