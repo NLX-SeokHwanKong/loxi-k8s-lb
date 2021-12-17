@@ -125,12 +125,14 @@ func (c *netlox) LoadBalancer() (cloudprovider.LoadBalancer, bool) {
 
 func (c *netlox) Instances() (cloudprovider.Instances, bool) {
 	klog.V(5).Info("Instances()")
-	return c.instances, true
+	// return c.instances, true
+	return nil, false
 }
 
 func (c *netlox) Zones() (cloudprovider.Zones, bool) {
 	klog.V(5).Info("Zones()")
-	return c.zones, true
+	// return c.zones, true
+	return nil, false
 }
 
 // Clusters is not implemented
