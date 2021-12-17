@@ -204,7 +204,7 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 		if ipamerr != nil {
 			klog.Errorln(ipamerr)
 		}
-		klog.V(5).Info("Error syncLoadBalancer() : %+v", service.Status.LoadBalancer)
+		klog.Info(fmt.Errorf("Error syncLoadBalancer() : %+v", service.Status.LoadBalancer))
 		return nil, fmt.Errorf("Error updating Service Spec [%s] : %v", service.Name, err)
 	}
 
@@ -217,7 +217,7 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 		return nil, err
 	}
 
-	klog.V(5).Info("Complete syncLoadBalancer() : %+v", service.Status.LoadBalancer)
+	klog.Info(fmt.Errorf("Complete syncLoadBalancer() : %+v", service.Status.LoadBalancer))
 	return &service.Status.LoadBalancer, nil
 }
 
