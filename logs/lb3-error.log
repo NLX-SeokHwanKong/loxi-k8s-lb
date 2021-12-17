@@ -1,0 +1,365 @@
+Flag --address has been deprecated, see --bind-address instead.
+I1217 01:40:46.381652       1 flags.go:33] FLAG: --add-dir-header="false"
+I1217 01:40:46.381752       1 flags.go:33] FLAG: --address="127.0.0.1"
+I1217 01:40:46.381758       1 flags.go:33] FLAG: --allocate-node-cidrs="false"
+I1217 01:40:46.381763       1 flags.go:33] FLAG: --allow-untagged-cloud="false"
+I1217 01:40:46.381768       1 flags.go:33] FLAG: --alsologtostderr="false"
+I1217 01:40:46.381772       1 flags.go:33] FLAG: --authentication-kubeconfig=""
+I1217 01:40:46.381776       1 flags.go:33] FLAG: --authentication-skip-lookup="false"
+I1217 01:40:46.381780       1 flags.go:33] FLAG: --authentication-token-webhook-cache-ttl="10s"
+I1217 01:40:46.381786       1 flags.go:33] FLAG: --authentication-tolerate-lookup-failure="false"
+I1217 01:40:46.381790       1 flags.go:33] FLAG: --authorization-always-allow-paths="[/healthz]"
+I1217 01:40:46.381800       1 flags.go:33] FLAG: --authorization-kubeconfig=""
+I1217 01:40:46.381804       1 flags.go:33] FLAG: --authorization-webhook-cache-authorized-ttl="10s"
+I1217 01:40:46.381808       1 flags.go:33] FLAG: --authorization-webhook-cache-unauthorized-ttl="10s"
+I1217 01:40:46.381812       1 flags.go:33] FLAG: --bind-address="0.0.0.0"
+I1217 01:40:46.381816       1 flags.go:33] FLAG: --cert-dir=""
+I1217 01:40:46.381820       1 flags.go:33] FLAG: --cidr-allocator-type="RangeAllocator"
+I1217 01:40:46.381824       1 flags.go:33] FLAG: --client-ca-file=""
+I1217 01:40:46.381828       1 flags.go:33] FLAG: --cloud-config=""
+I1217 01:40:46.381832       1 flags.go:33] FLAG: --cloud-provider="netlox"
+I1217 01:40:46.381837       1 flags.go:33] FLAG: --cluster-cidr=""
+I1217 01:40:46.381850       1 flags.go:33] FLAG: --cluster-name="kubernetes"
+I1217 01:40:46.381855       1 flags.go:33] FLAG: --concurrent-service-syncs="1"
+I1217 01:40:46.381860       1 flags.go:33] FLAG: --configure-cloud-routes="true"
+I1217 01:40:46.381864       1 flags.go:33] FLAG: --contention-profiling="false"
+I1217 01:40:46.381868       1 flags.go:33] FLAG: --controller-start-interval="0s"
+I1217 01:40:46.381872       1 flags.go:33] FLAG: --controllers="[*]"
+I1217 01:40:46.381879       1 flags.go:33] FLAG: --external-cloud-volume-plugin=""
+I1217 01:40:46.381884       1 flags.go:33] FLAG: --feature-gates=""
+I1217 01:40:46.381890       1 flags.go:33] FLAG: --help="false"
+I1217 01:40:46.381894       1 flags.go:33] FLAG: --http2-max-streams-per-connection="0"
+I1217 01:40:46.381899       1 flags.go:33] FLAG: --kube-api-burst="30"
+I1217 01:40:46.381906       1 flags.go:33] FLAG: --kube-api-content-type="application/vnd.kubernetes.protobuf"
+I1217 01:40:46.381911       1 flags.go:33] FLAG: --kube-api-qps="20"
+I1217 01:40:46.381917       1 flags.go:33] FLAG: --kubeconfig=""
+I1217 01:40:46.381921       1 flags.go:33] FLAG: --leader-elect="true"
+I1217 01:40:46.381925       1 flags.go:33] FLAG: --leader-elect-lease-duration="15s"
+I1217 01:40:46.381929       1 flags.go:33] FLAG: --leader-elect-renew-deadline="10s"
+I1217 01:40:46.381933       1 flags.go:33] FLAG: --leader-elect-resource-lock="endpointsleases"
+I1217 01:40:46.381937       1 flags.go:33] FLAG: --leader-elect-resource-name="netlox-cloud-controller-manager"
+I1217 01:40:46.381942       1 flags.go:33] FLAG: --leader-elect-resource-namespace="kube-system"
+I1217 01:40:46.381946       1 flags.go:33] FLAG: --leader-elect-retry-period="2s"
+I1217 01:40:46.381950       1 flags.go:33] FLAG: --log-backtrace-at=":0"
+I1217 01:40:46.381958       1 flags.go:33] FLAG: --log-dir=""
+I1217 01:40:46.381962       1 flags.go:33] FLAG: --log-file=""
+I1217 01:40:46.381966       1 flags.go:33] FLAG: --log-file-max-size="1800"
+I1217 01:40:46.381970       1 flags.go:33] FLAG: --log-flush-frequency="5s"
+I1217 01:40:46.381974       1 flags.go:33] FLAG: --logtostderr="true"
+I1217 01:40:46.381978       1 flags.go:33] FLAG: --master=""
+I1217 01:40:46.381982       1 flags.go:33] FLAG: --min-resync-period="12h0m0s"
+I1217 01:40:46.381986       1 flags.go:33] FLAG: --node-monitor-period="5s"
+I1217 01:40:46.381993       1 flags.go:33] FLAG: --node-status-update-frequency="5m0s"
+I1217 01:40:46.382000       1 flags.go:33] FLAG: --node-sync-period="0s"
+I1217 01:40:46.382019       1 flags.go:33] FLAG: --port="0"
+I1217 01:40:46.382039       1 flags.go:33] FLAG: --profiling="true"
+I1217 01:40:46.382046       1 flags.go:33] FLAG: --requestheader-allowed-names="[]"
+I1217 01:40:46.382073       1 flags.go:33] FLAG: --requestheader-client-ca-file=""
+I1217 01:40:46.382080       1 flags.go:33] FLAG: --requestheader-extra-headers-prefix="[x-remote-extra-]"
+I1217 01:40:46.382104       1 flags.go:33] FLAG: --requestheader-group-headers="[x-remote-group]"
+I1217 01:40:46.382125       1 flags.go:33] FLAG: --requestheader-username-headers="[x-remote-user]"
+I1217 01:40:46.382134       1 flags.go:33] FLAG: --route-reconciliation-period="10s"
+I1217 01:40:46.382139       1 flags.go:33] FLAG: --secure-port="10258"
+I1217 01:40:46.382143       1 flags.go:33] FLAG: --skip-headers="false"
+I1217 01:40:46.382148       1 flags.go:33] FLAG: --skip-log-headers="false"
+I1217 01:40:46.382152       1 flags.go:33] FLAG: --stderrthreshold="2"
+I1217 01:40:46.382156       1 flags.go:33] FLAG: --tls-cert-file=""
+I1217 01:40:46.382160       1 flags.go:33] FLAG: --tls-cipher-suites="[]"
+I1217 01:40:46.382168       1 flags.go:33] FLAG: --tls-min-version=""
+I1217 01:40:46.382172       1 flags.go:33] FLAG: --tls-private-key-file=""
+I1217 01:40:46.382176       1 flags.go:33] FLAG: --tls-sni-cert-key="[]"
+I1217 01:40:46.382204       1 flags.go:33] FLAG: --use-service-account-credentials="true"
+I1217 01:40:46.382224       1 flags.go:33] FLAG: --v="5"
+I1217 01:40:46.382228       1 flags.go:33] FLAG: --version="false"
+I1217 01:40:46.382234       1 flags.go:33] FLAG: --vmodule=""
+I1217 01:40:46.789536       1 serving.go:313] Generated self-signed cert in-memory
+W1217 01:40:47.365121       1 client_config.go:543] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+I1217 01:40:47.368028       1 controllermanager.go:120] Version: v0.0.0-master+$Format:%h$
+I1217 01:40:47.368935       1 cloud.go:153] HasClusterID()
+I1217 01:40:47.368982       1 healthz.go:124] Installing health checkers for (/healthz): "leaderElection"
+I1217 01:40:47.369821       1 configmap_cafile_content.go:202] Starting client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+I1217 01:40:47.369836       1 configmap_cafile_content.go:202] Starting client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+I1217 01:40:47.369853       1 shared_informer.go:223] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+I1217 01:40:47.369864       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639705246" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639705246" (2021-12-17 00:40:46 +0000 UTC to 2022-12-17 00:40:46 +0000 UTC (now=2021-12-17 01:40:47.369842841 +0000 UTC))
+I1217 01:40:47.369978       1 reflector.go:175] Starting reflector *v1.ConfigMap (12h0m0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:40:47.369999       1 reflector.go:211] Listing and watching *v1.ConfigMap from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:40:47.370006       1 reflector.go:175] Starting reflector *v1.ConfigMap (12h0m0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:40:47.370018       1 reflector.go:211] Listing and watching *v1.ConfigMap from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:40:47.370056       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639705247" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639705246" (2021-12-17 00:40:46 +0000 UTC to 2022-12-17 00:40:46 +0000 UTC (now=2021-12-17 01:40:47.37004558 +0000 UTC))
+I1217 01:40:47.369865       1 shared_informer.go:223] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+I1217 01:40:47.370077       1 secure_serving.go:178] Serving securely on 0.0.0.0:10258
+I1217 01:40:47.370121       1 leaderelection.go:242] attempting to acquire leader lease  kube-system/netlox-cloud-controller-manager...
+I1217 01:40:47.370167       1 tlsconfig.go:240] Starting DynamicServingCertificateController
+I1217 01:40:47.380359       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-n7d6m_ee133225-eda0-4a03-b228-3223262ec97e and has not yet expired
+I1217 01:40:47.380378       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:40:47.389865       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-n7d6m_ee133225-eda0-4a03-b228-3223262ec97e and has not yet expired
+I1217 01:40:47.389885       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:40:47.469995       1 shared_informer.go:253] caches populated
+I1217 01:40:47.470018       1 shared_informer.go:230] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::client-ca-file 
+I1217 01:40:47.470393       1 shared_informer.go:253] caches populated
+I1217 01:40:47.470425       1 shared_informer.go:230] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file 
+I1217 01:40:47.470477       1 tlsconfig.go:178] loaded client CA [0/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "kubernetes" [] issuer="<self>" (2021-12-16 07:50:32 +0000 UTC to 2031-12-14 07:50:32 +0000 UTC (now=2021-12-17 01:40:47.470448835 +0000 UTC))
+I1217 01:40:47.470761       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639705246" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639705246" (2021-12-17 00:40:46 +0000 UTC to 2022-12-17 00:40:46 +0000 UTC (now=2021-12-17 01:40:47.470740923 +0000 UTC))
+I1217 01:40:47.471232       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639705247" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639705246" (2021-12-17 00:40:46 +0000 UTC to 2022-12-17 00:40:46 +0000 UTC (now=2021-12-17 01:40:47.471210196 +0000 UTC))
+I1217 01:40:47.471475       1 tlsconfig.go:178] loaded client CA [0/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "kubernetes" [] issuer="<self>" (2021-12-16 07:50:32 +0000 UTC to 2031-12-14 07:50:32 +0000 UTC (now=2021-12-17 01:40:47.471453628 +0000 UTC))
+I1217 01:40:47.471553       1 tlsconfig.go:178] loaded client CA [1/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "front-proxy-ca" [] issuer="<self>" (2021-12-16 07:50:33 +0000 UTC to 2031-12-14 07:50:33 +0000 UTC (now=2021-12-17 01:40:47.47153538 +0000 UTC))
+I1217 01:40:47.472003       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639705246" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639705246" (2021-12-17 00:40:46 +0000 UTC to 2022-12-17 00:40:46 +0000 UTC (now=2021-12-17 01:40:47.471982174 +0000 UTC))
+I1217 01:40:47.472330       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639705247" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639705246" (2021-12-17 00:40:46 +0000 UTC to 2022-12-17 00:40:46 +0000 UTC (now=2021-12-17 01:40:47.47231677 +0000 UTC))
+I1217 01:40:51.472073       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-n7d6m_ee133225-eda0-4a03-b228-3223262ec97e and has not yet expired
+I1217 01:40:51.472106       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:40:53.488994       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-n7d6m_ee133225-eda0-4a03-b228-3223262ec97e and has not yet expired
+I1217 01:40:53.489030       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:40:55.634314       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-n7d6m_ee133225-eda0-4a03-b228-3223262ec97e and has not yet expired
+I1217 01:40:55.634355       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:40:59.759532       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-n7d6m_ee133225-eda0-4a03-b228-3223262ec97e and has not yet expired
+I1217 01:40:59.759569       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+E1217 01:41:03.203854       1 event.go:316] Could not construct reference to: '&v1.Lease{TypeMeta:v1.TypeMeta{Kind:"", APIVersion:""}, ObjectMeta:v1.ObjectMeta{Name:"netlox-cloud-controller-manager", GenerateName:"", Namespace:"kube-system", SelfLink:"/apis/coordination.k8s.io/v1/namespaces/kube-system/leases/netlox-cloud-controller-manager", UID:"6a71aec4-9c86-4b45-a321-49710e0ba3b5", ResourceVersion:"18038", Generation:0, CreationTimestamp:v1.Time{Time:time.Time{wall:0x0, ext:63775239387, loc:(*time.Location)(0x2867340)}}, DeletionTimestamp:(*v1.Time)(nil), DeletionGracePeriodSeconds:(*int64)(nil), Labels:map[string]string(nil), Annotations:map[string]string(nil), OwnerReferences:[]v1.OwnerReference(nil), Finalizers:[]string(nil), ClusterName:"", ManagedFields:[]v1.ManagedFieldsEntry{v1.ManagedFieldsEntry{Manager:"netlox-cloud-controller-manager", Operation:"Update", APIVersion:"coordination.k8s.io/v1", Time:(*v1.Time)(0xc0003c3950), FieldsType:"FieldsV1", FieldsV1:(*v1.FieldsV1)(0xc0003c3968)}}}, Spec:v1.LeaseSpec{HolderIdentity:(*string)(nil), LeaseDurationSeconds:(*int32)(nil), AcquireTime:(*v1.MicroTime)(nil), RenewTime:(*v1.MicroTime)(nil), LeaseTransitions:(*int32)(nil)}}' due to: 'no kind is registered for the type v1.Lease in scheme "pkg/runtime/scheme.go:101"'. Will not report event: 'Normal' 'LeaderElection' 'netlox-cloud-controller-manager-4hgm6_81b78d65-6096-486e-8593-46b8d473b406 became leader'
+I1217 01:41:03.203986       1 leaderelection.go:252] successfully acquired lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:03.204034       1 event.go:278] Event(v1.ObjectReference{Kind:"Endpoints", Namespace:"kube-system", Name:"netlox-cloud-controller-manager", UID:"f37e2a2b-e255-461f-b28f-77593117014c", APIVersion:"v1", ResourceVersion:"18037", FieldPath:""}): type: 'Normal' reason: 'LeaderElection' netlox-cloud-controller-manager-4hgm6_81b78d65-6096-486e-8593-46b8d473b406 became leader
+I1217 01:41:03.204161       1 cloud.go:108] Initialize()
+I1217 01:41:03.206170       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.206202       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.210966       1 client_builder.go:198] Verified credential for kube-system/do-shared-informers
+I1217 01:41:03.211069       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.212304       1 controllermanager.go:237] Starting "cloud-node"
+I1217 01:41:03.213503       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:03.214131       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.214157       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.217784       1 client_builder.go:198] Verified credential for kube-system/node-controller
+I1217 01:41:03.217874       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.218604       1 node_controller.go:110] Sending events to api server.
+I1217 01:41:03.218652       1 cloud.go:127] Instances()
+I1217 01:41:03.218679       1 controllermanager.go:247] Started "cloud-node"
+I1217 01:41:03.218687       1 controllermanager.go:237] Starting "cloud-node-lifecycle"
+I1217 01:41:03.218831       1 cloud.go:127] Instances()
+I1217 01:41:03.220057       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.220078       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.220145       1 instances.go:192] InstanceExistsByProviderID(netlox://m-c2-1)
+I1217 01:41:03.220174       1 instances.go:73] NodeAddressesByProviderID(netlox://m-c2-1)
+I1217 01:41:03.220188       1 instances.go:192] InstanceExistsByProviderID(netlox://n-c2-1)
+I1217 01:41:03.220199       1 instances.go:73] NodeAddressesByProviderID(netlox://n-c2-1)
+I1217 01:41:03.220249       1 cloud.go:127] Instances()
+I1217 01:41:03.221947       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:03.222293       1 instances.go:192] InstanceExistsByProviderID(netlox://m-c2-1)
+I1217 01:41:03.222311       1 instances.go:73] NodeAddressesByProviderID(netlox://m-c2-1)
+I1217 01:41:03.222319       1 instances.go:192] InstanceExistsByProviderID(netlox://n-c2-1)
+I1217 01:41:03.222324       1 instances.go:73] NodeAddressesByProviderID(netlox://n-c2-1)
+I1217 01:41:03.226550       1 client_builder.go:198] Verified credential for kube-system/node-controller
+I1217 01:41:03.226652       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.227538       1 node_lifecycle_controller.go:78] Sending events to api server
+I1217 01:41:03.227592       1 cloud.go:127] Instances()
+I1217 01:41:03.227603       1 controllermanager.go:247] Started "cloud-node-lifecycle"
+I1217 01:41:03.227618       1 controllermanager.go:237] Starting "service"
+I1217 01:41:03.227777       1 cloud.go:127] Instances()
+I1217 01:41:03.229053       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.229075       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.232674       1 client_builder.go:198] Verified credential for kube-system/service-controller
+I1217 01:41:03.232788       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.234231       1 cloud.go:122] LoadBalancer()
+I1217 01:41:03.234250       1 controllermanager.go:247] Started "service"
+I1217 01:41:03.234258       1 controllermanager.go:237] Starting "route"
+I1217 01:41:03.234264       1 core.go:101] Will not configure cloud provider routes for allocate-node-cidrs: false, configure-cloud-routes: true.
+W1217 01:41:03.234270       1 controllermanager.go:244] Skipping "route"
+I1217 01:41:03.234427       1 controller.go:208] Starting service controller
+I1217 01:41:03.234440       1 shared_informer.go:223] Waiting for caches to sync for service
+I1217 01:41:03.235941       1 reflector.go:175] Starting reflector *v1.Service (30s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.235959       1 reflector.go:211] Listing and watching *v1.Service from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.236000       1 reflector.go:175] Starting reflector *v1.Node (15h38m25.669247514s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.236012       1 reflector.go:211] Listing and watching *v1.Node from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:41:03.237236       1 node_controller.go:316] This node node1 is registered without the cloud taint. Will not process.
+I1217 01:41:03.237260       1 node_controller.go:316] This node node2 is registered without the cloud taint. Will not process.
+I1217 01:41:03.335154       1 shared_informer.go:253] caches populated
+I1217 01:41:03.335188       1 shared_informer.go:230] Caches are synced for service 
+I1217 01:41:03.335266       1 controller.go:661] Detected change in list of current cluster nodes. New node set: map[node2:{}]
+I1217 01:41:03.335292       1 loadbalancers.go:45] GetLoadBalancer()
+I1217 01:41:03.335294       1 loadbalancers.go:88] UpdateLoadBalancer()
+I1217 01:41:03.339390       1 controller.go:322] Deleting existing load balancer for service default/nginx
+I1217 01:41:03.339446       1 loadbalancers.go:102] EnsureLoadBalancerDeleted()
+I1217 01:41:03.339475       1 loadbalancers.go:107] deleting service 'nginx' (a085a206-9e59-4fd9-8069-9a0f31162117)
+I1217 01:41:03.339503       1 event.go:278] Event(v1.ObjectReference{Kind:"Service", Namespace:"default", Name:"nginx", UID:"a085a206-9e59-4fd9-8069-9a0f31162117", APIVersion:"v1", ResourceVersion:"16602", FieldPath:""}): type: 'Normal' reason: 'DeletingLoadBalancer' Deleting load balancer
+E1217 01:41:03.340745       1 loadbalancers.go:153] Unable to retrieve netlox service cache from configMap [netlox] in [default]
+E1217 01:41:03.341418       1 loadbalancers.go:112] The configMap [netlox] doensn't exist
+I1217 01:41:03.341466       1 controller.go:821] Removing finalizer from service default/nginx
+I1217 01:41:03.344403       1 loadbalancers.go:162] syncing service 'nginx' (a085a206-9e59-4fd9-8069-9a0f31162117)
+E1217 01:41:03.344435       1 loadbalancers.go:167] Unable to retrieve services from configMap [netlox], [unexpected end of JSON input]
+I1217 01:41:03.344452       1 loadbalancers.go:237] Taking address from [cidr-default] pool
+I1217 01:41:03.344478       1 loadbalancers.go:197] Updating service [nginx], with load balancer address [192.168.0.205]
+I1217 01:41:03.348318       1 controller.go:742] Finished syncing service "default/nginx" (13.038875ms)
+I1217 01:41:03.348390       1 event.go:278] Event(v1.ObjectReference{Kind:"Service", Namespace:"default", Name:"nginx", UID:"a085a206-9e59-4fd9-8069-9a0f31162117", APIVersion:"v1", ResourceVersion:"16602", FieldPath:""}): type: 'Normal' reason: 'DeletedLoadBalancer' Deleted load balancer
+I1217 01:41:03.349399       1 loadbalancers.go:45] GetLoadBalancer()
+E1217 01:41:03.351370       1 controller.go:719] failed to check if load balancer exists for service default/nginx: unexpected end of JSON input
+E1217 01:41:03.351411       1 controller.go:685] failed to update load balancer hosts for service default/nginx: Error updating Service Spec [nginx] : Operation cannot be fulfilled on services "nginx": StorageError: invalid object, Code: 4, Key: /registry/services/specs/default/nginx, ResourceVersion: 0, AdditionalErrorMsg: Precondition failed: UID in precondition: a085a206-9e59-4fd9-8069-9a0f31162117, UID in object meta: 
+I1217 01:41:03.351643       1 event.go:278] Event(v1.ObjectReference{Kind:"Service", Namespace:"default", Name:"nginx", UID:"a085a206-9e59-4fd9-8069-9a0f31162117", APIVersion:"v1", ResourceVersion:"16602", FieldPath:""}): type: 'Warning' reason: 'UpdateLoadBalancerFailed' Error updating load balancer with new hosts map[node2:{}]: Error updating Service Spec [nginx] : Operation cannot be fulfilled on services "nginx": StorageError: invalid object, Code: 4, Key: /registry/services/specs/default/nginx, ResourceVersion: 0, AdditionalErrorMsg: Precondition failed: UID in precondition: a085a206-9e59-4fd9-8069-9a0f31162117, UID in object meta: 
+I1217 01:41:03.353068       1 controller.go:669] Successfully updated 0 out of 1 load balancers to direct traffic to the updated set of nodes
+I1217 01:41:03.353106       1 loadbalancers.go:88] UpdateLoadBalancer()
+I1217 01:41:03.355878       1 loadbalancers.go:162] syncing service 'nginx' (a085a206-9e59-4fd9-8069-9a0f31162117)
+E1217 01:41:03.355906       1 loadbalancers.go:167] Unable to retrieve services from configMap [netlox], [unexpected end of JSON input]
+I1217 01:41:03.355914       1 loadbalancers.go:197] Updating service [nginx], with load balancer address [192.168.0.205]
+I1217 01:41:03.357570       1 loadbalancers.go:45] GetLoadBalancer()
+I1217 01:41:03.536065       1 request.go:557] Throttling request took 178.433061ms, request: GET:https://10.96.0.1:443/api/v1/namespaces/default/configmaps/netlox
+E1217 01:41:03.538264       1 controller.go:719] failed to check if load balancer exists for service default/nginx: unexpected end of JSON input
+E1217 01:41:03.538330       1 controller.go:685] failed to update load balancer hosts for service default/nginx: Error updating Service Spec [nginx] : services "nginx" not found
+I1217 01:41:03.538512       1 event.go:278] Event(v1.ObjectReference{Kind:"Service", Namespace:"default", Name:"nginx", UID:"a085a206-9e59-4fd9-8069-9a0f31162117", APIVersion:"v1", ResourceVersion:"16602", FieldPath:""}): type: 'Warning' reason: 'UpdateLoadBalancerFailed' Error updating load balancer with new hosts map[node2:{}]: Error updating Service Spec [nginx] : services "nginx" not found
+I1217 01:41:05.233659       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:07.248123       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:08.227999       1 cloud.go:127] Instances()
+I1217 01:41:09.259884       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:11.273940       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:13.228166       1 cloud.go:127] Instances()
+I1217 01:41:13.285764       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:15.296439       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:17.309933       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:18.228923       1 cloud.go:127] Instances()
+I1217 01:41:19.321849       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:21.334508       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:23.229168       1 cloud.go:127] Instances()
+I1217 01:41:23.345885       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:25.360296       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:27.373402       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:28.230345       1 cloud.go:127] Instances()
+I1217 01:41:29.388163       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:31.401451       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:33.231533       1 cloud.go:127] Instances()
+I1217 01:41:33.237408       1 reflector.go:336] pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125: forcing resync
+I1217 01:41:33.414044       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:35.428469       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:37.442470       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:38.232021       1 cloud.go:127] Instances()
+I1217 01:41:39.456496       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:41.469914       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:43.232774       1 cloud.go:127] Instances()
+I1217 01:41:43.481873       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:45.494339       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:47.506246       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:48.233963       1 cloud.go:127] Instances()
+I1217 01:41:49.521214       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:51.534165       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:53.235171       1 cloud.go:127] Instances()
+I1217 01:41:53.545599       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:55.557097       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:57.568050       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:41:58.236080       1 cloud.go:127] Instances()
+I1217 01:41:59.580383       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:01.596855       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:03.236404       1 cloud.go:127] Instances()
+I1217 01:42:03.237586       1 reflector.go:336] pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125: forcing resync
+I1217 01:42:03.609636       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:05.622863       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:07.635042       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:08.236515       1 cloud.go:127] Instances()
+I1217 01:42:09.647799       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:11.662387       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:13.237482       1 cloud.go:127] Instances()
+I1217 01:42:13.675815       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:15.688751       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:17.702174       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:18.238578       1 cloud.go:127] Instances()
+I1217 01:42:19.715523       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:21.729236       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:23.239667       1 cloud.go:127] Instances()
+I1217 01:42:23.741479       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:25.754081       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:27.766278       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:28.240570       1 cloud.go:127] Instances()
+I1217 01:42:29.778705       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:31.794033       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:33.237758       1 reflector.go:336] pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125: forcing resync
+I1217 01:42:33.241116       1 cloud.go:127] Instances()
+I1217 01:42:33.806081       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:35.821605       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:37.833487       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:38.241722       1 cloud.go:127] Instances()
+I1217 01:42:39.846228       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:41.858679       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:43.242787       1 cloud.go:127] Instances()
+I1217 01:42:43.539727       1 loadbalancers.go:88] UpdateLoadBalancer()
+I1217 01:42:43.544826       1 loadbalancers.go:162] syncing service 'nginx' (a085a206-9e59-4fd9-8069-9a0f31162117)
+E1217 01:42:43.544850       1 loadbalancers.go:167] Unable to retrieve services from configMap [netlox], [unexpected end of JSON input]
+I1217 01:42:43.544857       1 loadbalancers.go:197] Updating service [nginx], with load balancer address [192.168.0.205]
+I1217 01:42:43.546892       1 loadbalancers.go:45] GetLoadBalancer()
+E1217 01:42:43.548500       1 controller.go:719] failed to check if load balancer exists for service default/nginx: unexpected end of JSON input
+E1217 01:42:43.548561       1 controller.go:685] failed to update load balancer hosts for service default/nginx: Error updating Service Spec [nginx] : services "nginx" not found
+I1217 01:42:43.548620       1 event.go:278] Event(v1.ObjectReference{Kind:"Service", Namespace:"default", Name:"nginx", UID:"a085a206-9e59-4fd9-8069-9a0f31162117", APIVersion:"v1", ResourceVersion:"16602", FieldPath:""}): type: 'Warning' reason: 'UpdateLoadBalancerFailed' Error updating load balancer with new hosts map[node2:{}]: Error updating Service Spec [nginx] : services "nginx" not found
+I1217 01:42:43.872189       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:45.885678       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:47.899443       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:48.243218       1 cloud.go:127] Instances()
+I1217 01:42:49.911125       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:51.923982       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:53.243882       1 cloud.go:127] Instances()
+I1217 01:42:53.287405       1 controller.go:337] Ensuring load balancer for service default/nginx
+I1217 01:42:53.287508       1 controller.go:806] Adding finalizer to service default/nginx
+I1217 01:42:53.287703       1 event.go:278] Event(v1.ObjectReference{Kind:"Service", Namespace:"default", Name:"nginx", UID:"22b0c76b-8abb-44a9-b442-267152395076", APIVersion:"v1", ResourceVersion:"18475", FieldPath:""}): type: 'Normal' reason: 'EnsuringLoadBalancer' Ensuring load balancer
+I1217 01:42:53.292538       1 loadbalancers.go:79] EnsureLoadBalancer()
+I1217 01:42:53.297955       1 loadbalancers.go:162] syncing service 'nginx' (22b0c76b-8abb-44a9-b442-267152395076)
+E1217 01:42:53.297986       1 loadbalancers.go:167] Unable to retrieve services from configMap [netlox], [unexpected end of JSON input]
+I1217 01:42:53.297996       1 loadbalancers.go:237] Taking address from [cidr-default] pool
+I1217 01:42:53.298003       1 loadbalancers.go:197] Updating service [nginx], with load balancer address [192.168.0.205]
+I1217 01:42:53.301184       1 controller.go:742] Finished syncing service "default/nginx" (13.793435ms)
+E1217 01:42:53.301221       1 controller.go:244] error processing service default/nginx (will retry): failed to ensure load balancer: Error updating Service Spec [nginx] : Operation cannot be fulfilled on services "nginx": the object has been modified; please apply your changes to the latest version and try again
+I1217 01:42:53.301493       1 event.go:278] Event(v1.ObjectReference{Kind:"Service", Namespace:"default", Name:"nginx", UID:"22b0c76b-8abb-44a9-b442-267152395076", APIVersion:"v1", ResourceVersion:"18475", FieldPath:""}): type: 'Warning' reason: 'SyncLoadBalancerFailed' Error syncing load balancer: failed to ensure load balancer: Error updating Service Spec [nginx] : Operation cannot be fulfilled on services "nginx": the object has been modified; please apply your changes to the latest version and try again
+I1217 01:42:53.936855       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:55.949976       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:57.960934       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:42:58.244592       1 cloud.go:127] Instances()
+I1217 01:42:58.301945       1 controller.go:337] Ensuring load balancer for service default/nginx
+I1217 01:42:58.302134       1 loadbalancers.go:79] EnsureLoadBalancer()
+I1217 01:42:58.302191       1 event.go:278] Event(v1.ObjectReference{Kind:"Service", Namespace:"default", Name:"nginx", UID:"22b0c76b-8abb-44a9-b442-267152395076", APIVersion:"v1", ResourceVersion:"18478", FieldPath:""}): type: 'Normal' reason: 'EnsuringLoadBalancer' Ensuring load balancer
+I1217 01:42:58.306038       1 loadbalancers.go:162] syncing service 'nginx' (22b0c76b-8abb-44a9-b442-267152395076)
+E1217 01:42:58.306062       1 loadbalancers.go:167] Unable to retrieve services from configMap [netlox], [unexpected end of JSON input]
+I1217 01:42:58.306070       1 loadbalancers.go:237] Taking address from [cidr-default] pool
+I1217 01:42:58.306077       1 loadbalancers.go:197] Updating service [nginx], with load balancer address [192.168.0.205]
+I1217 01:42:58.313646       1 controller.go:742] Finished syncing service "default/nginx" (11.698189ms)
+I1217 01:42:58.313908       1 event.go:278] Event(v1.ObjectReference{Kind:"Service", Namespace:"default", Name:"nginx", UID:"22b0c76b-8abb-44a9-b442-267152395076", APIVersion:"v1", ResourceVersion:"18478", FieldPath:""}): type: 'Normal' reason: 'EnsuredLoadBalancer' Ensured load balancer
+I1217 01:42:59.973821       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:01.988051       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:03.238959       1 reflector.go:336] pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125: forcing resync
+I1217 01:43:03.245203       1 cloud.go:127] Instances()
+I1217 01:43:03.999914       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:06.012579       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:08.025600       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:08.246141       1 cloud.go:127] Instances()
+I1217 01:43:10.038467       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:12.050601       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:13.246682       1 cloud.go:127] Instances()
+I1217 01:43:14.062496       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:16.074406       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:18.086385       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:18.247049       1 cloud.go:127] Instances()
+I1217 01:43:20.098247       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:22.111779       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:23.247188       1 cloud.go:127] Instances()
+I1217 01:43:24.124608       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:26.137361       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:28.151005       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:28.247389       1 cloud.go:127] Instances()
+I1217 01:43:30.163364       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:32.175118       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:33.239670       1 reflector.go:336] pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125: forcing resync
+I1217 01:43:33.248048       1 cloud.go:127] Instances()
+I1217 01:43:34.190046       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:36.202728       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:38.216200       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:38.248593       1 cloud.go:127] Instances()
+I1217 01:43:40.228255       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:42.246358       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:43.249226       1 cloud.go:127] Instances()
+I1217 01:43:44.258316       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:46.271453       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:48.249461       1 cloud.go:127] Instances()
+I1217 01:43:48.283628       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:50.296045       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:52.308697       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:53.250279       1 cloud.go:127] Instances()
+I1217 01:43:54.321871       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:56.335744       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:43:58.251037       1 cloud.go:127] Instances()
+I1217 01:43:58.348955       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:44:00.361096       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:44:02.375082       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:44:03.240908       1 reflector.go:336] pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125: forcing resync
+I1217 01:44:03.252138       1 cloud.go:127] Instances()
+I1217 01:44:04.392960       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:44:06.406131       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:44:08.252558       1 cloud.go:127] Instances()
+I1217 01:44:08.418539       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
