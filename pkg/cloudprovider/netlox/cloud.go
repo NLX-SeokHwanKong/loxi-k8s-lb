@@ -90,11 +90,11 @@ func newCloud() (cloudprovider.Interface, error) {
 	}
 
 	// Bootstrap HTTP client here
-	cc := newnetloxClient()
+	// cc := newnetloxClient()
 
 	return &netlox{
-		instances:     newInstances(cc),
-		zones:         newZones(cc),
+		// instances:     newInstances(cc),
+		// zones:         newZones(cc),
 		loadbalancers: newLoadBalancers(cl, ns, cm, cidr),
 	}, nil
 }
