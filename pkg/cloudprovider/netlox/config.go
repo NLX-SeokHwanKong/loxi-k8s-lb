@@ -3,19 +3,15 @@ package netlox
 import (
 	"context"
 	"encoding/json"
-	"fmt"
 
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/klog"
 )
 
 // Services functions - once the service data is taken from teh configMap, these functions will interact with the data
 
 func (s *loxiServices) addService(newSvc services, nodes []*v1.Node, nodePort int32) {
 	s.Services = append(s.Services, newSvc)
-
-	klog.Info(fmt.Printf("Called addService() with Nodes : %+v", nodes))
 
 	// TODO: Add Call of LOXI-LB API for whole worker nodes which is labeled with LB SDK to configurea Load Balancing
 	/*
