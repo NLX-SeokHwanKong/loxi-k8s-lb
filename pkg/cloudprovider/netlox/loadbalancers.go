@@ -183,13 +183,6 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 		if err != nil {
 			return nil, err
 		}
-		service.Status.LoadBalancer = v1.LoadBalancerStatus{
-			Ingress: []v1.LoadBalancerIngress{
-				{
-					IP: service.Spec.LoadBalancerIP,
-				},
-			},
-		}
 	}
 
 	// TODO - manage more than one set of ports
@@ -224,17 +217,16 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 		return nil, err
 	}
 
-	// return &v1.LoadBalancerStatus{
-	// 	Ingress: []v1.LoadBalancerIngress{
-	// 		{
-	// 			IP: vip,
-	// 		},
-	// 	},
-	// }, nil
-
 	klog.Info(fmt.Errorf("Complete syncLoadBalancer() : %+v", service.Status.LoadBalancer))
 
-	return &service.Status.LoadBalancer, nil
+	// return &service.Status.LoadBalancer, nil
+	return &v1.LoadBalancerStatus{
+		Ingress: []v1.LoadBalancerIngress{
+			{
+				IP: service.Spec.LoadBalancerIP,
+			},
+		},
+	}, nil
 }
 
 func discoverAddress(cm *v1.ConfigMap, namespace, configMapName string) (vip string, err error) {
