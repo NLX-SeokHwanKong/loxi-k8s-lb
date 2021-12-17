@@ -1,113 +1,227 @@
 Flag --address has been deprecated, see --bind-address instead.
-I1217 01:17:36.719667       1 flags.go:33] FLAG: --add-dir-header="false"
-I1217 01:17:36.719700       1 flags.go:33] FLAG: --address="127.0.0.1"
-I1217 01:17:36.719707       1 flags.go:33] FLAG: --allocate-node-cidrs="false"
-I1217 01:17:36.719711       1 flags.go:33] FLAG: --allow-untagged-cloud="false"
-I1217 01:17:36.719716       1 flags.go:33] FLAG: --alsologtostderr="false"
-I1217 01:17:36.719720       1 flags.go:33] FLAG: --authentication-kubeconfig=""
-I1217 01:17:36.719725       1 flags.go:33] FLAG: --authentication-skip-lookup="false"
-I1217 01:17:36.719729       1 flags.go:33] FLAG: --authentication-token-webhook-cache-ttl="10s"
-I1217 01:17:36.719734       1 flags.go:33] FLAG: --authentication-tolerate-lookup-failure="false"
-I1217 01:17:36.719738       1 flags.go:33] FLAG: --authorization-always-allow-paths="[/healthz]"
-I1217 01:17:36.719754       1 flags.go:33] FLAG: --authorization-kubeconfig=""
-I1217 01:17:36.719758       1 flags.go:33] FLAG: --authorization-webhook-cache-authorized-ttl="10s"
-I1217 01:17:36.719763       1 flags.go:33] FLAG: --authorization-webhook-cache-unauthorized-ttl="10s"
-I1217 01:17:36.719769       1 flags.go:33] FLAG: --bind-address="0.0.0.0"
-I1217 01:17:36.719774       1 flags.go:33] FLAG: --cert-dir=""
-I1217 01:17:36.719778       1 flags.go:33] FLAG: --cidr-allocator-type="RangeAllocator"
-I1217 01:17:36.719783       1 flags.go:33] FLAG: --client-ca-file=""
-I1217 01:17:36.719786       1 flags.go:33] FLAG: --cloud-config=""
-I1217 01:17:36.719790       1 flags.go:33] FLAG: --cloud-provider="netlox"
-I1217 01:17:36.719794       1 flags.go:33] FLAG: --cluster-cidr=""
-I1217 01:17:36.719798       1 flags.go:33] FLAG: --cluster-name="kubernetes"
-I1217 01:17:36.719802       1 flags.go:33] FLAG: --concurrent-service-syncs="1"
-I1217 01:17:36.719809       1 flags.go:33] FLAG: --configure-cloud-routes="true"
-I1217 01:17:36.719813       1 flags.go:33] FLAG: --contention-profiling="false"
-I1217 01:17:36.719817       1 flags.go:33] FLAG: --controller-start-interval="0s"
-I1217 01:17:36.719821       1 flags.go:33] FLAG: --controllers="[*]"
-I1217 01:17:36.719827       1 flags.go:33] FLAG: --external-cloud-volume-plugin=""
-I1217 01:17:36.719832       1 flags.go:33] FLAG: --feature-gates=""
-I1217 01:17:36.719838       1 flags.go:33] FLAG: --help="false"
-I1217 01:17:36.719842       1 flags.go:33] FLAG: --http2-max-streams-per-connection="0"
-I1217 01:17:36.719847       1 flags.go:33] FLAG: --kube-api-burst="30"
-I1217 01:17:36.719851       1 flags.go:33] FLAG: --kube-api-content-type="application/vnd.kubernetes.protobuf"
-I1217 01:17:36.719857       1 flags.go:33] FLAG: --kube-api-qps="20"
-I1217 01:17:36.719865       1 flags.go:33] FLAG: --kubeconfig=""
-I1217 01:17:36.719869       1 flags.go:33] FLAG: --leader-elect="true"
-I1217 01:17:36.719874       1 flags.go:33] FLAG: --leader-elect-lease-duration="15s"
-I1217 01:17:36.719879       1 flags.go:33] FLAG: --leader-elect-renew-deadline="10s"
-I1217 01:17:36.719883       1 flags.go:33] FLAG: --leader-elect-resource-lock="endpointsleases"
-I1217 01:17:36.719887       1 flags.go:33] FLAG: --leader-elect-resource-name="netlox-cloud-controller-manager"
-I1217 01:17:36.719893       1 flags.go:33] FLAG: --leader-elect-resource-namespace="kube-system"
-I1217 01:17:36.719897       1 flags.go:33] FLAG: --leader-elect-retry-period="2s"
-I1217 01:17:36.719901       1 flags.go:33] FLAG: --log-backtrace-at=":0"
-I1217 01:17:36.719909       1 flags.go:33] FLAG: --log-dir=""
-I1217 01:17:36.719913       1 flags.go:33] FLAG: --log-file=""
-I1217 01:17:36.719917       1 flags.go:33] FLAG: --log-file-max-size="1800"
-I1217 01:17:36.719922       1 flags.go:33] FLAG: --log-flush-frequency="5s"
-I1217 01:17:36.719927       1 flags.go:33] FLAG: --logtostderr="true"
-I1217 01:17:36.719931       1 flags.go:33] FLAG: --master=""
-I1217 01:17:36.719935       1 flags.go:33] FLAG: --min-resync-period="12h0m0s"
-I1217 01:17:36.719939       1 flags.go:33] FLAG: --node-monitor-period="5s"
-I1217 01:17:36.719943       1 flags.go:33] FLAG: --node-status-update-frequency="5m0s"
-I1217 01:17:36.719948       1 flags.go:33] FLAG: --node-sync-period="0s"
-I1217 01:17:36.719953       1 flags.go:33] FLAG: --port="0"
-I1217 01:17:36.719957       1 flags.go:33] FLAG: --profiling="true"
-I1217 01:17:36.719961       1 flags.go:33] FLAG: --requestheader-allowed-names="[]"
-I1217 01:17:36.719967       1 flags.go:33] FLAG: --requestheader-client-ca-file=""
-I1217 01:17:36.719971       1 flags.go:33] FLAG: --requestheader-extra-headers-prefix="[x-remote-extra-]"
-I1217 01:17:36.719976       1 flags.go:33] FLAG: --requestheader-group-headers="[x-remote-group]"
-I1217 01:17:36.719984       1 flags.go:33] FLAG: --requestheader-username-headers="[x-remote-user]"
-I1217 01:17:36.719988       1 flags.go:33] FLAG: --route-reconciliation-period="10s"
-I1217 01:17:36.719993       1 flags.go:33] FLAG: --secure-port="10258"
-I1217 01:17:36.720000       1 flags.go:33] FLAG: --skip-headers="false"
-I1217 01:17:36.720004       1 flags.go:33] FLAG: --skip-log-headers="false"
-I1217 01:17:36.720008       1 flags.go:33] FLAG: --stderrthreshold="2"
-I1217 01:17:36.720012       1 flags.go:33] FLAG: --tls-cert-file=""
-I1217 01:17:36.720017       1 flags.go:33] FLAG: --tls-cipher-suites="[]"
-I1217 01:17:36.720024       1 flags.go:33] FLAG: --tls-min-version=""
-I1217 01:17:36.720028       1 flags.go:33] FLAG: --tls-private-key-file=""
-I1217 01:17:36.720047       1 flags.go:33] FLAG: --tls-sni-cert-key="[]"
-I1217 01:17:36.720053       1 flags.go:33] FLAG: --use-service-account-credentials="true"
-I1217 01:17:36.720057       1 flags.go:33] FLAG: --v="5"
-I1217 01:17:36.720062       1 flags.go:33] FLAG: --version="false"
-I1217 01:17:36.720068       1 flags.go:33] FLAG: --vmodule=""
-I1217 01:17:37.678393       1 serving.go:313] Generated self-signed cert in-memory
-W1217 01:17:38.025580       1 client_config.go:543] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
-I1217 01:17:38.028164       1 controllermanager.go:120] Version: v0.0.0-master+$Format:%h$
-I1217 01:17:38.029175       1 cloud.go:153] HasClusterID()
-I1217 01:17:38.029211       1 healthz.go:124] Installing health checkers for (/healthz): "leaderElection"
-I1217 01:17:38.030110       1 configmap_cafile_content.go:202] Starting client-ca::kube-system::extension-apiserver-authentication::client-ca-file
-I1217 01:17:38.030144       1 shared_informer.go:223] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
-I1217 01:17:38.030107       1 configmap_cafile_content.go:202] Starting client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
-I1217 01:17:38.030160       1 shared_informer.go:223] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
-I1217 01:17:38.030201       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639703857" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639703857" (2021-12-17 00:17:36 +0000 UTC to 2022-12-17 00:17:36 +0000 UTC (now=2021-12-17 01:17:38.03017728 +0000 UTC))
-I1217 01:17:38.030305       1 reflector.go:175] Starting reflector *v1.ConfigMap (12h0m0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
-I1217 01:17:38.030338       1 reflector.go:211] Listing and watching *v1.ConfigMap from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
-I1217 01:17:38.030355       1 reflector.go:175] Starting reflector *v1.ConfigMap (12h0m0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
-I1217 01:17:38.030368       1 reflector.go:211] Listing and watching *v1.ConfigMap from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
-I1217 01:17:38.030502       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639703858" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639703857" (2021-12-17 00:17:37 +0000 UTC to 2022-12-17 00:17:37 +0000 UTC (now=2021-12-17 01:17:38.03048215 +0000 UTC))
-I1217 01:17:38.030541       1 secure_serving.go:178] Serving securely on 0.0.0.0:10258
-I1217 01:17:38.030560       1 tlsconfig.go:240] Starting DynamicServingCertificateController
-I1217 01:17:38.030587       1 leaderelection.go:242] attempting to acquire leader lease  kube-system/netlox-cloud-controller-manager...
-I1217 01:17:38.040014       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_49ce1a3e-4050-4f72-90f2-50be12b3c04b and has not yet expired
-I1217 01:17:38.040034       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
-I1217 01:17:38.042971       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_49ce1a3e-4050-4f72-90f2-50be12b3c04b and has not yet expired
-I1217 01:17:38.042989       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
-I1217 01:17:38.131228       1 shared_informer.go:253] caches populated
-I1217 01:17:38.131260       1 shared_informer.go:230] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file 
-I1217 01:17:38.131288       1 shared_informer.go:253] caches populated
-I1217 01:17:38.131305       1 shared_informer.go:230] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::client-ca-file 
-I1217 01:17:38.131674       1 tlsconfig.go:178] loaded client CA [0/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "front-proxy-ca" [] issuer="<self>" (2021-12-16 07:50:33 +0000 UTC to 2031-12-14 07:50:33 +0000 UTC (now=2021-12-17 01:17:38.131645199 +0000 UTC))
-I1217 01:17:38.131984       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639703857" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639703857" (2021-12-17 00:17:36 +0000 UTC to 2022-12-17 00:17:36 +0000 UTC (now=2021-12-17 01:17:38.131967874 +0000 UTC))
-I1217 01:17:38.132210       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639703858" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639703857" (2021-12-17 00:17:37 +0000 UTC to 2022-12-17 00:17:37 +0000 UTC (now=2021-12-17 01:17:38.132199104 +0000 UTC))
-I1217 01:17:38.132366       1 tlsconfig.go:178] loaded client CA [0/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "kubernetes" [] issuer="<self>" (2021-12-16 07:50:32 +0000 UTC to 2031-12-14 07:50:32 +0000 UTC (now=2021-12-17 01:17:38.132349294 +0000 UTC))
-I1217 01:17:38.132411       1 tlsconfig.go:178] loaded client CA [1/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "front-proxy-ca" [] issuer="<self>" (2021-12-16 07:50:33 +0000 UTC to 2031-12-14 07:50:33 +0000 UTC (now=2021-12-17 01:17:38.132402906 +0000 UTC))
-I1217 01:17:38.132637       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639703857" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639703857" (2021-12-17 00:17:36 +0000 UTC to 2022-12-17 00:17:36 +0000 UTC (now=2021-12-17 01:17:38.132621662 +0000 UTC))
-I1217 01:17:38.132828       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639703858" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639703857" (2021-12-17 00:17:37 +0000 UTC to 2022-12-17 00:17:37 +0000 UTC (now=2021-12-17 01:17:38.132819194 +0000 UTC))
-I1217 01:17:40.382343       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_49ce1a3e-4050-4f72-90f2-50be12b3c04b and has not yet expired
-I1217 01:17:40.382369       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
-I1217 01:17:43.533655       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_49ce1a3e-4050-4f72-90f2-50be12b3c04b and has not yet expired
-I1217 01:17:43.533688       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
-I1217 01:17:46.108120       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_49ce1a3e-4050-4f72-90f2-50be12b3c04b and has not yet expired
-I1217 01:17:46.108148       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:18:48.712689       1 flags.go:33] FLAG: --add-dir-header="false"
+I1217 01:18:48.712728       1 flags.go:33] FLAG: --address="127.0.0.1"
+I1217 01:18:48.712735       1 flags.go:33] FLAG: --allocate-node-cidrs="false"
+I1217 01:18:48.712741       1 flags.go:33] FLAG: --allow-untagged-cloud="false"
+I1217 01:18:48.712745       1 flags.go:33] FLAG: --alsologtostderr="false"
+I1217 01:18:48.712749       1 flags.go:33] FLAG: --authentication-kubeconfig=""
+I1217 01:18:48.712797       1 flags.go:33] FLAG: --authentication-skip-lookup="false"
+I1217 01:18:48.712870       1 flags.go:33] FLAG: --authentication-token-webhook-cache-ttl="10s"
+I1217 01:18:48.712893       1 flags.go:33] FLAG: --authentication-tolerate-lookup-failure="false"
+I1217 01:18:48.712899       1 flags.go:33] FLAG: --authorization-always-allow-paths="[/healthz]"
+I1217 01:18:48.712918       1 flags.go:33] FLAG: --authorization-kubeconfig=""
+I1217 01:18:48.712922       1 flags.go:33] FLAG: --authorization-webhook-cache-authorized-ttl="10s"
+I1217 01:18:48.712927       1 flags.go:33] FLAG: --authorization-webhook-cache-unauthorized-ttl="10s"
+I1217 01:18:48.712931       1 flags.go:33] FLAG: --bind-address="0.0.0.0"
+I1217 01:18:48.712936       1 flags.go:33] FLAG: --cert-dir=""
+I1217 01:18:48.712940       1 flags.go:33] FLAG: --cidr-allocator-type="RangeAllocator"
+I1217 01:18:48.712944       1 flags.go:33] FLAG: --client-ca-file=""
+I1217 01:18:48.712948       1 flags.go:33] FLAG: --cloud-config=""
+I1217 01:18:48.713056       1 flags.go:33] FLAG: --cloud-provider="netlox"
+I1217 01:18:48.713173       1 flags.go:33] FLAG: --cluster-cidr=""
+I1217 01:18:48.713191       1 flags.go:33] FLAG: --cluster-name="kubernetes"
+I1217 01:18:48.713196       1 flags.go:33] FLAG: --concurrent-service-syncs="1"
+I1217 01:18:48.713202       1 flags.go:33] FLAG: --configure-cloud-routes="true"
+I1217 01:18:48.713206       1 flags.go:33] FLAG: --contention-profiling="false"
+I1217 01:18:48.713210       1 flags.go:33] FLAG: --controller-start-interval="0s"
+I1217 01:18:48.713215       1 flags.go:33] FLAG: --controllers="[*]"
+I1217 01:18:48.713221       1 flags.go:33] FLAG: --external-cloud-volume-plugin=""
+I1217 01:18:48.713225       1 flags.go:33] FLAG: --feature-gates=""
+I1217 01:18:48.713239       1 flags.go:33] FLAG: --help="false"
+I1217 01:18:48.713243       1 flags.go:33] FLAG: --http2-max-streams-per-connection="0"
+I1217 01:18:48.713249       1 flags.go:33] FLAG: --kube-api-burst="30"
+I1217 01:18:48.713253       1 flags.go:33] FLAG: --kube-api-content-type="application/vnd.kubernetes.protobuf"
+I1217 01:18:48.713266       1 flags.go:33] FLAG: --kube-api-qps="20"
+I1217 01:18:48.713273       1 flags.go:33] FLAG: --kubeconfig=""
+I1217 01:18:48.713277       1 flags.go:33] FLAG: --leader-elect="true"
+I1217 01:18:48.713281       1 flags.go:33] FLAG: --leader-elect-lease-duration="15s"
+I1217 01:18:48.713285       1 flags.go:33] FLAG: --leader-elect-renew-deadline="10s"
+I1217 01:18:48.713290       1 flags.go:33] FLAG: --leader-elect-resource-lock="endpointsleases"
+I1217 01:18:48.713295       1 flags.go:33] FLAG: --leader-elect-resource-name="netlox-cloud-controller-manager"
+I1217 01:18:48.713300       1 flags.go:33] FLAG: --leader-elect-resource-namespace="kube-system"
+I1217 01:18:48.713304       1 flags.go:33] FLAG: --leader-elect-retry-period="2s"
+I1217 01:18:48.713308       1 flags.go:33] FLAG: --log-backtrace-at=":0"
+I1217 01:18:48.713322       1 flags.go:33] FLAG: --log-dir=""
+I1217 01:18:48.713327       1 flags.go:33] FLAG: --log-file=""
+I1217 01:18:48.713330       1 flags.go:33] FLAG: --log-file-max-size="1800"
+I1217 01:18:48.713335       1 flags.go:33] FLAG: --log-flush-frequency="5s"
+I1217 01:18:48.713339       1 flags.go:33] FLAG: --logtostderr="true"
+I1217 01:18:48.713344       1 flags.go:33] FLAG: --master=""
+I1217 01:18:48.713348       1 flags.go:33] FLAG: --min-resync-period="12h0m0s"
+I1217 01:18:48.713355       1 flags.go:33] FLAG: --node-monitor-period="5s"
+I1217 01:18:48.713366       1 flags.go:33] FLAG: --node-status-update-frequency="5m0s"
+I1217 01:18:48.713380       1 flags.go:33] FLAG: --node-sync-period="0s"
+I1217 01:18:48.713387       1 flags.go:33] FLAG: --port="0"
+I1217 01:18:48.713404       1 flags.go:33] FLAG: --profiling="true"
+I1217 01:18:48.713466       1 flags.go:33] FLAG: --requestheader-allowed-names="[]"
+I1217 01:18:48.713590       1 flags.go:33] FLAG: --requestheader-client-ca-file=""
+I1217 01:18:48.713619       1 flags.go:33] FLAG: --requestheader-extra-headers-prefix="[x-remote-extra-]"
+I1217 01:18:48.713658       1 flags.go:33] FLAG: --requestheader-group-headers="[x-remote-group]"
+I1217 01:18:48.713671       1 flags.go:33] FLAG: --requestheader-username-headers="[x-remote-user]"
+I1217 01:18:48.713694       1 flags.go:33] FLAG: --route-reconciliation-period="10s"
+I1217 01:18:48.713699       1 flags.go:33] FLAG: --secure-port="10258"
+I1217 01:18:48.713703       1 flags.go:33] FLAG: --skip-headers="false"
+I1217 01:18:48.713708       1 flags.go:33] FLAG: --skip-log-headers="false"
+I1217 01:18:48.713712       1 flags.go:33] FLAG: --stderrthreshold="2"
+I1217 01:18:48.713716       1 flags.go:33] FLAG: --tls-cert-file=""
+I1217 01:18:48.713721       1 flags.go:33] FLAG: --tls-cipher-suites="[]"
+I1217 01:18:48.713737       1 flags.go:33] FLAG: --tls-min-version=""
+I1217 01:18:48.713742       1 flags.go:33] FLAG: --tls-private-key-file=""
+I1217 01:18:48.713746       1 flags.go:33] FLAG: --tls-sni-cert-key="[]"
+I1217 01:18:48.713753       1 flags.go:33] FLAG: --use-service-account-credentials="true"
+I1217 01:18:48.713757       1 flags.go:33] FLAG: --v="5"
+I1217 01:18:48.713762       1 flags.go:33] FLAG: --version="false"
+I1217 01:18:48.713776       1 flags.go:33] FLAG: --vmodule=""
+I1217 01:18:49.109798       1 serving.go:313] Generated self-signed cert in-memory
+W1217 01:18:49.648559       1 client_config.go:543] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+I1217 01:18:49.652649       1 controllermanager.go:120] Version: v0.0.0-master+$Format:%h$
+I1217 01:18:49.653554       1 cloud.go:153] HasClusterID()
+I1217 01:18:49.653590       1 healthz.go:124] Installing health checkers for (/healthz): "leaderElection"
+I1217 01:18:49.654309       1 configmap_cafile_content.go:202] Starting client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+I1217 01:18:49.654358       1 shared_informer.go:223] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+I1217 01:18:49.654387       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639703929" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639703928" (2021-12-17 00:18:48 +0000 UTC to 2022-12-17 00:18:48 +0000 UTC (now=2021-12-17 01:18:49.654366361 +0000 UTC))
+I1217 01:18:49.654385       1 configmap_cafile_content.go:202] Starting client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+I1217 01:18:49.654427       1 shared_informer.go:223] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::client-ca-file
+I1217 01:18:49.654464       1 reflector.go:175] Starting reflector *v1.ConfigMap (12h0m0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:18:49.654488       1 reflector.go:211] Listing and watching *v1.ConfigMap from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:18:49.654717       1 reflector.go:175] Starting reflector *v1.ConfigMap (12h0m0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:18:49.654739       1 reflector.go:211] Listing and watching *v1.ConfigMap from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:18:49.654720       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639703929" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639703929" (2021-12-17 00:18:49 +0000 UTC to 2022-12-17 00:18:49 +0000 UTC (now=2021-12-17 01:18:49.654696625 +0000 UTC))
+I1217 01:18:49.654770       1 secure_serving.go:178] Serving securely on 0.0.0.0:10258
+I1217 01:18:49.654826       1 leaderelection.go:242] attempting to acquire leader lease  kube-system/netlox-cloud-controller-manager...
+I1217 01:18:49.654880       1 tlsconfig.go:240] Starting DynamicServingCertificateController
+I1217 01:18:49.663748       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_594377ed-e295-44e1-b54d-360e3e108963 and has not yet expired
+I1217 01:18:49.663768       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:18:49.666807       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_594377ed-e295-44e1-b54d-360e3e108963 and has not yet expired
+I1217 01:18:49.666825       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:18:49.755000       1 shared_informer.go:253] caches populated
+I1217 01:18:49.755020       1 shared_informer.go:230] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::client-ca-file 
+I1217 01:18:49.755050       1 shared_informer.go:253] caches populated
+I1217 01:18:49.755065       1 shared_informer.go:230] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file 
+I1217 01:18:49.755400       1 tlsconfig.go:178] loaded client CA [0/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "kubernetes" [] issuer="<self>" (2021-12-16 07:50:32 +0000 UTC to 2031-12-14 07:50:32 +0000 UTC (now=2021-12-17 01:18:49.755378336 +0000 UTC))
+I1217 01:18:49.755764       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639703929" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639703928" (2021-12-17 00:18:48 +0000 UTC to 2022-12-17 00:18:48 +0000 UTC (now=2021-12-17 01:18:49.75575249 +0000 UTC))
+I1217 01:18:49.756017       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639703929" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639703929" (2021-12-17 00:18:49 +0000 UTC to 2022-12-17 00:18:49 +0000 UTC (now=2021-12-17 01:18:49.756005452 +0000 UTC))
+I1217 01:18:49.756167       1 tlsconfig.go:178] loaded client CA [0/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "kubernetes" [] issuer="<self>" (2021-12-16 07:50:32 +0000 UTC to 2031-12-14 07:50:32 +0000 UTC (now=2021-12-17 01:18:49.756157534 +0000 UTC))
+I1217 01:18:49.756217       1 tlsconfig.go:178] loaded client CA [1/"client-ca::kube-system::extension-apiserver-authentication::client-ca-file,client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"]: "front-proxy-ca" [] issuer="<self>" (2021-12-16 07:50:33 +0000 UTC to 2031-12-14 07:50:33 +0000 UTC (now=2021-12-17 01:18:49.756190069 +0000 UTC))
+I1217 01:18:49.756589       1 tlsconfig.go:200] loaded serving cert ["Generated self signed cert"]: "localhost@1639703929" [serving] validServingFor=[127.0.0.1,localhost,localhost] issuer="localhost-ca@1639703928" (2021-12-17 00:18:48 +0000 UTC to 2022-12-17 00:18:48 +0000 UTC (now=2021-12-17 01:18:49.756559954 +0000 UTC))
+I1217 01:18:49.756897       1 named_certificates.go:53] loaded SNI cert [0/"self-signed loopback"]: "apiserver-loopback-client@1639703929" [serving] validServingFor=[apiserver-loopback-client] issuer="apiserver-loopback-client-ca@1639703929" (2021-12-17 00:18:49 +0000 UTC to 2022-12-17 00:18:49 +0000 UTC (now=2021-12-17 01:18:49.756886646 +0000 UTC))
+I1217 01:18:53.201078       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_594377ed-e295-44e1-b54d-360e3e108963 and has not yet expired
+I1217 01:18:53.201112       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:18:57.220816       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_594377ed-e295-44e1-b54d-360e3e108963 and has not yet expired
+I1217 01:18:57.220842       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:18:59.449442       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_594377ed-e295-44e1-b54d-360e3e108963 and has not yet expired
+I1217 01:18:59.449478       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+I1217 01:19:03.188263       1 leaderelection.go:341] lock is held by netlox-cloud-controller-manager-xjlcc_594377ed-e295-44e1-b54d-360e3e108963 and has not yet expired
+I1217 01:19:03.188289       1 leaderelection.go:247] failed to acquire lease kube-system/netlox-cloud-controller-manager
+E1217 01:19:07.090124       1 event.go:316] Could not construct reference to: '&v1.Lease{TypeMeta:v1.TypeMeta{Kind:"", APIVersion:""}, ObjectMeta:v1.ObjectMeta{Name:"netlox-cloud-controller-manager", GenerateName:"", Namespace:"kube-system", SelfLink:"/apis/coordination.k8s.io/v1/namespaces/kube-system/leases/netlox-cloud-controller-manager", UID:"6a71aec4-9c86-4b45-a321-49710e0ba3b5", ResourceVersion:"14336", Generation:0, CreationTimestamp:v1.Time{Time:time.Time{wall:0x0, ext:63775239387, loc:(*time.Location)(0x2867340)}}, DeletionTimestamp:(*v1.Time)(nil), DeletionGracePeriodSeconds:(*int64)(nil), Labels:map[string]string(nil), Annotations:map[string]string(nil), OwnerReferences:[]v1.OwnerReference(nil), Finalizers:[]string(nil), ClusterName:"", ManagedFields:[]v1.ManagedFieldsEntry{v1.ManagedFieldsEntry{Manager:"netlox-cloud-controller-manager", Operation:"Update", APIVersion:"coordination.k8s.io/v1", Time:(*v1.Time)(0xc000610168), FieldsType:"FieldsV1", FieldsV1:(*v1.FieldsV1)(0xc000610228)}}}, Spec:v1.LeaseSpec{HolderIdentity:(*string)(nil), LeaseDurationSeconds:(*int32)(nil), AcquireTime:(*v1.MicroTime)(nil), RenewTime:(*v1.MicroTime)(nil), LeaseTransitions:(*int32)(nil)}}' due to: 'no kind is registered for the type v1.Lease in scheme "pkg/runtime/scheme.go:101"'. Will not report event: 'Normal' 'LeaderElection' 'netlox-cloud-controller-manager-xjlcc_74bc015d-13fa-41ed-9fbe-ace2ebaa2621 became leader'
+I1217 01:19:07.090238       1 leaderelection.go:252] successfully acquired lease kube-system/netlox-cloud-controller-manager
+I1217 01:19:07.090307       1 event.go:278] Event(v1.ObjectReference{Kind:"Endpoints", Namespace:"kube-system", Name:"netlox-cloud-controller-manager", UID:"f37e2a2b-e255-461f-b28f-77593117014c", APIVersion:"v1", ResourceVersion:"14335", FieldPath:""}): type: 'Normal' reason: 'LeaderElection' netlox-cloud-controller-manager-xjlcc_74bc015d-13fa-41ed-9fbe-ace2ebaa2621 became leader
+I1217 01:19:07.090406       1 cloud.go:108] Initialize()
+I1217 01:19:07.092746       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.092767       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.096916       1 client_builder.go:198] Verified credential for kube-system/do-shared-informers
+I1217 01:19:07.097195       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.097970       1 controllermanager.go:237] Starting "service"
+I1217 01:19:07.099109       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:19:07.099711       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.099728       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.103907       1 client_builder.go:198] Verified credential for kube-system/service-controller
+I1217 01:19:07.103977       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.106524       1 cloud.go:122] LoadBalancer()
+I1217 01:19:07.106544       1 controllermanager.go:247] Started "service"
+I1217 01:19:07.106552       1 controllermanager.go:237] Starting "route"
+I1217 01:19:07.106557       1 core.go:101] Will not configure cloud provider routes for allocate-node-cidrs: false, configure-cloud-routes: true.
+W1217 01:19:07.106564       1 controllermanager.go:244] Skipping "route"
+I1217 01:19:07.106568       1 controllermanager.go:237] Starting "cloud-node"
+I1217 01:19:07.106687       1 controller.go:208] Starting service controller
+I1217 01:19:07.106701       1 shared_informer.go:223] Waiting for caches to sync for service
+I1217 01:19:07.108591       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.108671       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.108991       1 leaderelection.go:272] successfully renewed lease kube-system/netlox-cloud-controller-manager
+I1217 01:19:07.112462       1 client_builder.go:198] Verified credential for kube-system/node-controller
+I1217 01:19:07.112574       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.113320       1 node_controller.go:110] Sending events to api server.
+I1217 01:19:07.113350       1 cloud.go:127] Instances()
+I1217 01:19:07.113388       1 controllermanager.go:247] Started "cloud-node"
+I1217 01:19:07.113415       1 controllermanager.go:237] Starting "cloud-node-lifecycle"
+I1217 01:19:07.113550       1 cloud.go:127] Instances()
+I1217 01:19:07.114866       1 instances.go:192] InstanceExistsByProviderID(netlox://m-c2-1)
+I1217 01:19:07.114895       1 instances.go:73] NodeAddressesByProviderID(netlox://m-c2-1)
+I1217 01:19:07.114980       1 instances.go:192] InstanceExistsByProviderID(netlox://n-c2-1)
+I1217 01:19:07.114988       1 instances.go:73] NodeAddressesByProviderID(netlox://n-c2-1)
+I1217 01:19:07.115030       1 cloud.go:127] Instances()
+I1217 01:19:07.114873       1 reflector.go:175] Starting reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.115216       1 reflector.go:211] Listing and watching *v1.Secret from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.116141       1 instances.go:192] InstanceExistsByProviderID(netlox://m-c2-1)
+I1217 01:19:07.116195       1 instances.go:73] NodeAddressesByProviderID(netlox://m-c2-1)
+I1217 01:19:07.116216       1 instances.go:192] InstanceExistsByProviderID(netlox://n-c2-1)
+I1217 01:19:07.116246       1 instances.go:73] NodeAddressesByProviderID(netlox://n-c2-1)
+I1217 01:19:07.121538       1 client_builder.go:198] Verified credential for kube-system/node-controller
+I1217 01:19:07.121644       1 reflector.go:181] Stopping reflector *v1.Secret (0s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.123764       1 node_lifecycle_controller.go:78] Sending events to api server
+I1217 01:19:07.123865       1 cloud.go:127] Instances()
+I1217 01:19:07.123891       1 controllermanager.go:247] Started "cloud-node-lifecycle"
+I1217 01:19:07.124334       1 cloud.go:127] Instances()
+I1217 01:19:07.126030       1 reflector.go:175] Starting reflector *v1.Service (30s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.126048       1 reflector.go:211] Listing and watching *v1.Service from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.126071       1 reflector.go:175] Starting reflector *v1.Node (20h11m29.742838937s) from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.126084       1 reflector.go:211] Listing and watching *v1.Node from pkg/mod/k8s.io/client-go@v0.18.0/tools/cache/reflector.go:125
+I1217 01:19:07.127415       1 node_controller.go:316] This node node2 is registered without the cloud taint. Will not process.
+I1217 01:19:07.127431       1 node_controller.go:316] This node node1 is registered without the cloud taint. Will not process.
+I1217 01:19:07.207631       1 shared_informer.go:253] caches populated
+I1217 01:19:07.207650       1 shared_informer.go:230] Caches are synced for service 
+I1217 01:19:07.207707       1 controller.go:661] Detected change in list of current cluster nodes. New node set: map[node2:{}]
+I1217 01:19:07.207785       1 controller.go:742] Finished syncing service "default/nginx" (46.392µs)
+E1217 01:19:07.207847       1 runtime.go:78] Observed a panic: "invalid memory address or nil pointer dereference" (runtime error: invalid memory address or nil pointer dereference)
+goroutine 169 [running]:
+k8s.io/apimachinery/pkg/util/runtime.logPanic(0x189eba0, 0x2842400)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/runtime/runtime.go:74 +0xa6
+k8s.io/apimachinery/pkg/util/runtime.HandleCrash(0x0, 0x0, 0x0)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/runtime/runtime.go:48 +0x86
+panic(0x189eba0, 0x2842400)
+	/usr/local/go/src/runtime/panic.go:965 +0x1b9
+k8s.io/kubernetes/pkg/controller/service.(*Controller).lockedUpdateLoadBalancerHosts(0xc00089a000, 0xc00002c210, 0xc0006581e8, 0x1, 0x1, 0x0, 0x2867658)
+	/root/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:701 +0x8d
+k8s.io/kubernetes/pkg/controller/service.(*Controller).updateLoadBalancerHosts.func1(0xc00079fd68, 0xc00089a000, 0xc0006581e8, 0x1, 0x1, 0xc00079fdb8)
+	/root/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:684 +0x86
+k8s.io/kubernetes/pkg/controller/service.(*Controller).updateLoadBalancerHosts(0xc00089a000, 0xc0006581f0, 0x1, 0x1, 0xc0006581e8, 0x1, 0x1, 0x0, 0x0, 0x0)
+	/root/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:688 +0x95
+k8s.io/kubernetes/pkg/controller/service.(*Controller).nodeSyncLoop(0xc00089a000)
+	/root/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:668 +0x2e6
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1(0xc00075ec90)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:155 +0x5f
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil(0xc00075ec90, 0x1ce7f60, 0xc0003d0180, 0x1, 0xc000804840)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:156 +0x9b
+k8s.io/apimachinery/pkg/util/wait.JitterUntil(0xc00075ec90, 0x174876e800, 0x0, 0xc000730501, 0xc000804840)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:133 +0xd6
+k8s.io/apimachinery/pkg/util/wait.Until(0xc00075ec90, 0x174876e800, 0xc000804840)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:90 +0x4d
+created by k8s.io/kubernetes/pkg/controller/service.(*Controller).Run
+	/root/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:219 +0x2ec
+panic: runtime error: invalid memory address or nil pointer dereference [recovered]
+	panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x38 pc=0x171146d]
+
+goroutine 169 [running]:
+k8s.io/apimachinery/pkg/util/runtime.HandleCrash(0x0, 0x0, 0x0)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/runtime/runtime.go:55 +0x109
+panic(0x189eba0, 0x2842400)
+	/usr/local/go/src/runtime/panic.go:965 +0x1b9
+k8s.io/kubernetes/pkg/controller/service.(*Controller).lockedUpdateLoadBalancerHosts(0xc00089a000, 0xc00002c210, 0xc0006581e8, 0x1, 0x1, 0x0, 0x2867658)
+	/root/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:701 +0x8d
+k8s.io/kubernetes/pkg/controller/service.(*Controller).updateLoadBalancerHosts.func1(0xc00090dd68, 0xc00089a000, 0xc0006581e8, 0x1, 0x1, 0xc00090ddb8)
+	/root/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:684 +0x86
+k8s.io/kubernetes/pkg/controller/service.(*Controller).updateLoadBalancerHosts(0xc00089a000, 0xc0006581f0, 0x1, 0x1, 0xc0006581e8, 0x1, 0x1, 0x0, 0x0, 0x0)
+	/root/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:688 +0x95
+k8s.io/kubernetes/pkg/controller/service.(*Controller).nodeSyncLoop(0xc00089a000)
+	/root/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:668 +0x2e6
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil.func1(0xc00075ec90)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:155 +0x5f
+k8s.io/apimachinery/pkg/util/wait.BackoffUntil(0xc00075ec90, 0x1ce7f60, 0xc0003d0180, 0x1, 0xc000804840)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:156 +0x9b
+k8s.io/apimachinery/pkg/util/wait.JitterUntil(0xc00075ec90, 0x174876e800, 0x0, 0xc000730501, 0xc000804840)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:133 +0xd6
+k8s.io/apimachinery/pkg/util/wait.Until(0xc00075ec90, 0x174876e800, 0xc000804840)
+	/root/go/pkg/mod/k8s.io/apimachinery@v0.18.1-beta.0/pkg/util/wait/wait.go:90 +0x4d
+created by k8s.io/kubernetes/pkg/controller/service.(*Controller).Run
+	/root/go/pkg/mod/k8s.io/kubernetes@v1.18.0/pkg/controller/service/controller.go:219 +0x2ec
