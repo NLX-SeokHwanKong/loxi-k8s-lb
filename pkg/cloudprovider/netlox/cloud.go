@@ -1,9 +1,15 @@
 package netlox
 
 import (
+	"fmt"
 	"io"
+	"os"
+	"path/filepath"
 
 	"k8s.io/client-go/informers"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/rest"
+	"k8s.io/client-go/tools/clientcmd"
 	cloudprovider "k8s.io/cloud-provider"
 	"k8s.io/klog"
 )
@@ -43,56 +49,53 @@ func init() {
 
 // newCloud returns a cloudprovider.Interface
 func newCloud() (cloudprovider.Interface, error) {
-	/*
-		ns := os.Getenv("NETLOX_NAMESPACE")
-		cm := os.Getenv("NETLOX_CONFIG_MAP")
-		cidr := os.Getenv("NETLOX_SERVICE_CIDR")
+	ns := os.Getenv("NETLOX_NAMESPACE")
+	cm := os.Getenv("NETLOX_CONFIG_MAP")
+	cidr := os.Getenv("NETLOX_SERVICE_CIDR")
 
-		if cm == "" {
-			cm = NetloxCloudConfig
+	if cm == "" {
+		cm = NetloxCloudConfig
+	}
+
+	if ns == "" {
+		ns = "default"
+	}
+
+	var cl *kubernetes.Clientset
+	if OutSideCluster == false {
+		// This will attempt to load the configuration when running within a POD
+		cfg, err := rest.InClusterConfig()
+		if err != nil {
+			klog.Error("error creating kubernetes client config: %s", err.Error())
+			return nil, fmt.Errorf("error creating kubernetes client config: %s", err.Error())
 		}
+		cl, err = kubernetes.NewForConfig(cfg)
 
-		if ns == "" {
-			ns = "default"
+		if err != nil {
+			klog.Error("error creating kubernetes client: %s", err.Error())
+			return nil, fmt.Errorf("error creating kubernetes client: %s", err.Error())
 		}
-
-		var cl *kubernetes.Clientset
-		if OutSideCluster == false {
-			// This will attempt to load the configuration when running within a POD
-			cfg, err := rest.InClusterConfig()
-			if err != nil {
-				klog.Error("error creating kubernetes client config: %s", err.Error())
-				return nil, fmt.Errorf("error creating kubernetes client config: %s", err.Error())
-			}
-			cl, err = kubernetes.NewForConfig(cfg)
-
-			if err != nil {
-				klog.Error("error creating kubernetes client: %s", err.Error())
-				return nil, fmt.Errorf("error creating kubernetes client: %s", err.Error())
-			}
-			// use the current context in kubeconfig
-		} else {
-			config, err := clientcmd.BuildConfigFromFlags("", filepath.Join(os.Getenv("HOME"), ".kube", "config"))
-			if err != nil {
-				panic(err.Error())
-			}
-			cl, err = kubernetes.NewForConfig(config)
-
-			if err != nil {
-				klog.Error("error creating kubernetes client: %s", err.Error())
-				return nil, fmt.Errorf("error creating kubernetes client: %s", err.Error())
-			}
+		// use the current context in kubeconfig
+	} else {
+		config, err := clientcmd.BuildConfigFromFlags("", filepath.Join(os.Getenv("HOME"), ".kube", "config"))
+		if err != nil {
+			panic(err.Error())
 		}
-	*/
+		cl, err = kubernetes.NewForConfig(config)
+
+		if err != nil {
+			klog.Error("error creating kubernetes client: %s", err.Error())
+			return nil, fmt.Errorf("error creating kubernetes client: %s", err.Error())
+		}
+	}
 
 	// Bootstrap HTTP client here
 	cc := newnetloxClient()
 
 	return &netlox{
-		instances: newInstances(cc),
-		zones:     newZones(cc),
-		// loadbalancers: newLoadBalancers(cl, ns, cm, cidr),
-		loadbalancers: newLoadBalancers(cc),
+		instances:     newInstances(cc),
+		zones:         newZones(cc),
+		loadbalancers: newLoadBalancers(cl, ns, cm, cidr),
 	}, nil
 }
 
