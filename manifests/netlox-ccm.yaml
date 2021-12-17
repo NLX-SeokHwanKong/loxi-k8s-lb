@@ -18,6 +18,15 @@ subjects:
     name: netlox-cloud-controller-manager
     namespace: kube-system
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: netlox
+  namespace: kube-system
+data:
+  cidr-default: 192.168.0.200/29
+  cidr-global: 192.168.0.220/29
+---
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
