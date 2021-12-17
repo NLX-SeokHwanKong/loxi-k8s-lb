@@ -20,9 +20,9 @@ var OutSideCluster bool
 // The netlox cloud provider implementation. Encapsulates a client to talk to our cloud provider
 // and the interfaces needed to satisfy the cloudprovider.Interface interface.
 type netlox struct {
-	providerName  string
-	instances     cloudprovider.Instances
-	zones         cloudprovider.Zones
+	providerName string
+	// instances     cloudprovider.Instances
+	// zones         cloudprovider.Zones
 	loadbalancers cloudprovider.LoadBalancer
 }
 
