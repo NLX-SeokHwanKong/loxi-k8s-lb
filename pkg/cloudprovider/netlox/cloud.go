@@ -120,7 +120,7 @@ func (c *netlox) Initialize(clientBuilder cloudprovider.ControllerClientBuilder,
 
 func (c *netlox) LoadBalancer() (cloudprovider.LoadBalancer, bool) {
 	klog.V(5).Info("LoadBalancer()")
-	return nil, true
+	return c.loadbalancers, true
 }
 
 func (c *netlox) Instances() (cloudprovider.Instances, bool) {
