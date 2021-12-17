@@ -210,7 +210,7 @@ func (lb *loadbalancers) syncLoadBalancer(ctx context.Context, service *v1.Servi
 
 	nodePort := service.Spec.Ports[0].NodePort
 
-	klog.Info(fmt.Errorf("Node Lists() : %+v", nodes))
+	klog.Info(fmt.Errorf("Labels of Node Lists() : %+v", nodes[0].ObjectMeta.Labels))
 	svc.addService(newSvc, nodes, nodePort)
 
 	namespaceCM, err = lb.UpdateConfigMap(ctx, namespaceCM, svc)
